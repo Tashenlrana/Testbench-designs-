@@ -48,6 +48,7 @@ module tb_mem;
         rd_en   = 0;
         addr    = 0;
         wr_data = 0;
+        tx_count = 0;//ADded later
 
         $display("Seed=%0d",$get_initial_random_seed());
         cycle=0;
@@ -76,8 +77,8 @@ module tb_mem;
                 // Replace WRITE_REQ with address derived from counter:
                 WRITE_REQ: begin
                     wr_en   = 1;
-                    addr    = $urandom%8;      // Random address between 0 and 7
-                    wr_data =$urandom;   // Random 8 bit data
+                    addr    = 3'($urandom%8);      // Random address between 0 and 7
+                    wr_data =8'($urandom);   // Random 8 bit data
                     written_data = wr_data; //save for later comparison
                     $display("[%0t] Cycle %0d: WRITE: addr=0x%0h data=0x%0h", $time, cycle, addr, wr_data);
                     state   = WRITE_WAIT;
