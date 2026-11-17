@@ -51,6 +51,8 @@ module tb_mem;
 
         $display("Seed=%0d",$get_initial_random_seed());
         cycle=0;
+        $dumpfile("waveform.vcd");//For Verilator Waveforms
+        $dumpvars(0,tb_mem);//For Verilator Waveforms
 
         // Hold reset for two clock cycles then release
         @(posedge clk);
@@ -130,11 +132,11 @@ module tb_mem;
                         */
                     end
                 end
-                //y
+                
 
             endcase
         end
     end
-    //d
+    
 
 endmodule
