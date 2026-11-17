@@ -36,6 +36,8 @@ module tb_mem;
 
     integer state;
     integer tx_count;
+    integer cycle;
+    reg [7:0] written_data;
 
     // ── Testbench FSM ──────────────────────────────────────────────
     initial begin
@@ -46,6 +48,9 @@ module tb_mem;
         rd_en   = 0;
         addr    = 0;
         wr_data = 0;
+
+        $display("Seed=%0d",$get_initial_random_seed());
+        cycle=0;
 
         // Hold reset for two clock cycles then release
         @(posedge clk);
@@ -69,8 +74,10 @@ module tb_mem;
                 // Replace WRITE_REQ with address derived from counter:
                 WRITE_REQ: begin
                     wr_en   = 1;
-                    addr    = tx_count[2:0];      // cycle through addresses 0..7
-                    wr_data = tx_count * 8'h11;   // unique data per address
+                    addr    = $urandom%8;      // Random address between 0 and 7
+                    wr_data =$urandom;   // Random 8 bit data
+                    written_data = wr_data; //save for later comparison
+                    $display("[%0t] Cycle %0d: WRITE: addr=0x%0h data=0x%0h", $time, cycle, addr, wr_data);
                     state   = WRITE_WAIT;
                     end
                     // In WRITE_WAIT, after ack, decide whether to loop or proceed:
@@ -80,12 +87,13 @@ module tb_mem;
                         if (tx_count < 7) begin
                             tx_count = tx_count + 1;
                             state    = WRITE_REQ;   // write next address
-                            end else begin
-                                tx_count = 0;
-                                state    = READ_REQ;    // all writes done, start reads
-                                end
-                                end
-                                end
+                            end 
+                        else begin
+                            tx_count = 0;
+                            state    = READ_REQ;    // all writes done, start reads
+                        end
+                        end
+                        end
                 // ── READ_REQ: request data back from same address ───
                 READ_REQ: begin
                     rd_en  = 1;           // assert read enable
@@ -98,6 +106,18 @@ module tb_mem;
                 DONE: begin
                     if (ack) begin
                         rd_en = 0;
+                        if(rd_data!==written_data)
+                            $error("Cycle %0d MISMATCH: wrote 0x%0h, read 0x%0h",cycle,written_data, rd_data);
+                        else
+                            $display("[%0t] Cycle %0d PASS", $time,cycle);
+                        cycle=cycle+1;
+                        if(cycle<20) begin
+                            state=WRITE_REQ;//Run another cycle of write/read
+                        end else begin
+                            $display("All 20 cycles complete");
+                            $finish;
+                        end
+                        /*
                         $display("[%0t] State: DONE — rd_data=0x%0h", $time, rd_data);
 
                         // Verify read-back matches what was written
@@ -107,12 +127,13 @@ module tb_mem;
                             $display("PASS: read-back correct");
 
                         $finish;
+                        */
                     end
-                    // Stay in DONE until ack arrives
                 end
 
             endcase
         end
     end
+    //d
 
 endmodule
