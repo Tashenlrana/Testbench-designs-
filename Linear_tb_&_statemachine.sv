@@ -67,26 +67,25 @@ module tb_mem;
                 end
 
                 // Replace WRITE_REQ with address derived from counter:
-WRITE_REQ: begin
-    wr_en   = 1;
-    addr    = tx_count[2:0];      // cycle through addresses 0..7
-    wr_data = tx_count * 8'h11;   // unique data per address
-    state   = WRITE_WAIT;
-end
-
-// In WRITE_WAIT, after ack, decide whether to loop or proceed:
-WRITE_WAIT: begin
-    if (ack) begin
-        wr_en = 0;
-        if (tx_count < 7) begin
-            tx_count = tx_count + 1;
-            state    = WRITE_REQ;   // write next address
-        end else begin
-            tx_count = 0;
-            state    = READ_REQ;    // all writes done, start reads
-        end
-    end
-end
+                WRITE_REQ: begin
+                    wr_en   = 1;
+                    addr    = tx_count[2:0];      // cycle through addresses 0..7
+                    wr_data = tx_count * 8'h11;   // unique data per address
+                    state   = WRITE_WAIT;
+                    end
+                    // In WRITE_WAIT, after ack, decide whether to loop or proceed:
+                WRITE_WAIT: begin
+                    if (ack) begin
+                        wr_en = 0;
+                        if (tx_count < 7) begin
+                            tx_count = tx_count + 1;
+                            state    = WRITE_REQ;   // write next address
+                            end else begin
+                                tx_count = 0;
+                                state    = READ_REQ;    // all writes done, start reads
+                                end
+                                end
+                                end
                 // ── READ_REQ: request data back from same address ───
                 READ_REQ: begin
                     rd_en  = 1;           // assert read enable
