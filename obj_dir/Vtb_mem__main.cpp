@@ -2,7 +2,7 @@
 // DESCRIPTION: Verilator output: main() simulation loop, created with --main
 
 #include "verilated.h"
-#include "Vtb_adder_selfcheck.h"
+#include "Vtb_mem.h"
 
 //======================
 
@@ -15,7 +15,7 @@ int main(int argc, char** argv, char**) {
     contextp->commandArgs(argc, argv);
 
     // Construct the Verilated model, from Vtop.h generated from Verilating
-    const std::unique_ptr<Vtb_adder_selfcheck> topp{new Vtb_adder_selfcheck{contextp.get(), ""}};
+    const std::unique_ptr<Vtb_mem> topp{new Vtb_mem{contextp.get(), ""}};
 
     // Simulate until $finish
     while (VL_LIKELY(!contextp->gotFinish())) {

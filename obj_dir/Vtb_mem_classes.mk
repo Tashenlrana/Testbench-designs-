@@ -2,7 +2,7 @@
 # DESCRIPTION: Verilator output: Make include file with class lists
 #
 # This file lists generated Verilated files, for including in higher level makefiles.
-# See Vtb_adder_selfcheck.mk for the caller.
+# See Vtb_mem.mk for the caller.
 
 ### Switches...
 # C11 constructs required?  0/1 (always on now)
@@ -27,24 +27,24 @@ VM_VPI = 0
 ### Object file lists...
 # Generated module classes, fast-path, compile with highest optimization
 VM_CLASSES_FAST += \
-  Vtb_adder_selfcheck \
-  Vtb_adder_selfcheck___024root__0 \
-  Vtb_adder_selfcheck__main \
+  Vtb_mem \
+  Vtb_mem___024root__0 \
+  Vtb_mem__main \
 
 # Generated module classes, non-fast-path, compile with low/medium optimization
 VM_CLASSES_SLOW += \
-  Vtb_adder_selfcheck___024root__Slow \
-  Vtb_adder_selfcheck___024root__0__Slow \
+  Vtb_mem___024root__Slow \
+  Vtb_mem___024root__0__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization
 VM_SUPPORT_FAST += \
-  Vtb_adder_selfcheck__Trace__0 \
+  Vtb_mem__Trace__0 \
 
 # Generated support classes, non-fast-path, compile with low/medium optimization
 VM_SUPPORT_SLOW += \
-  Vtb_adder_selfcheck__Syms__Slow \
-  Vtb_adder_selfcheck__Trace__0__Slow \
-  Vtb_adder_selfcheck__TraceDecls__0__Slow \
+  Vtb_mem__Syms__Slow \
+  Vtb_mem__Trace__0__Slow \
+  Vtb_mem__TraceDecls__0__Slow \
 
 # Global classes, need linked once per executable, fast-path, compile with highest optimization
 VM_GLOBAL_FAST += \

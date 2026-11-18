@@ -1,3 +1,6 @@
+//Linear random testbench practice for a simple memory interface
+//Challenge: Extend to a Memory Interface
+//Linear random testbench for the 8x8 synchronous memory with acknowledge handshake
 module tb_mem;
 
     // ── DUT signals ────────────────────────────────────────────────
@@ -11,7 +14,7 @@ module tb_mem;
     wire       ack;
 
     // ── DUT instantiation ──────────────────────────────────────────
-    mem_dut dut (
+    mem_dut dut(
         .clk    (clk),
         .rst    (rst),
         .wr_en  (wr_en),
@@ -37,7 +40,10 @@ module tb_mem;
     integer state;
     integer tx_count;
     integer cycle;
-    reg [7:0] written_data;
+    //reg [7:0] written_data;
+    reg [7:0] expected [0:7];//ad
+    reg [2:0] read_addr;//ad
+    integer   k;//add
 
     // ── Testbench FSM ──────────────────────────────────────────────
     initial begin
@@ -49,6 +55,7 @@ module tb_mem;
         addr    = 0;
         wr_data = 0;
         tx_count = 0;//ADded later
+        read_addr = 0;//Added
 
         $display("Seed=%0d",$get_initial_random_seed());
         cycle=0;
@@ -59,6 +66,9 @@ module tb_mem;
         @(posedge clk);
         @(posedge clk);
         rst = 0;
+
+        for(k=0;k<8;k=k+1) expected[k]=8'h00;//initialize expected memory
+
 
         // ── Step through each state on every rising clock edge ─────
         forever begin
@@ -79,7 +89,8 @@ module tb_mem;
                     wr_en   = 1;
                     addr    = 3'($urandom%8);      // Random address between 0 and 7
                     wr_data =8'($urandom);   // Random 8 bit data
-                    written_data = wr_data; //save for later comparison
+                    expected[addr]=wr_data;//model of what the DUT should now hold
+                    //written_data = wr_data; //save for later comparison
                     $display("[%0t] Cycle %0d: WRITE: addr=0x%0h data=0x%0h", $time, cycle, addr, wr_data);
                     state   = WRITE_WAIT;
                     end
@@ -100,7 +111,7 @@ module tb_mem;
                 // ── READ_REQ: request data back from same address ───
                 READ_REQ: begin
                     rd_en  = 1;           // assert read enable
-                    addr   = 3'h4;        // same address we wrote
+                    addr   = read_addr;        // same address we wrote
                     $display("[%0t] State: READ_REQ — addr=0x%0h", $time, addr);
                     state  = DONE;
                 end
@@ -109,16 +120,22 @@ module tb_mem;
                 DONE: begin
                     if (ack) begin
                         rd_en = 0;
-                        if(rd_data!==written_data)
-                            $error("Cycle %0d MISMATCH: wrote 0x%0h, read 0x%0h",cycle,written_data, rd_data);
+                        if(rd_data!==expected[read_addr])
+                            $error("Cycle %0d MISMATCH: expected 0x%0h, read 0x%0h",cycle,read_addr,expected[read_addr], rd_data);
                         else
-                            $display("[%0t] Cycle %0d PASS", $time,cycle);
-                        cycle=cycle+1;
-                        if(cycle<20) begin
-                            state=WRITE_REQ;//Run another cycle of write/read
+                            $display("[%0t] Cycle %0d PASS", $time,cycle,read_addr);
+                        if(read_addr<7) begin
+                            read_addr=read_addr+1;
+                            state=READ_REQ;
                         end else begin
-                            $display("All 20 cycles complete");
-                            $finish;
+                            read_addr=0;
+                            cycle=cycle+1;
+                            if(cycle<20) state=WRITE_REQ;
+                            else begin
+                                $display("All 20 cycles  complete, finishing test");
+                                $finish;
+                            end
+                         
                         end
                         /*
                         $display("[%0t] State: DONE — rd_data=0x%0h", $time, rd_data);
@@ -141,3 +158,4 @@ module tb_mem;
     
 
 endmodule
+

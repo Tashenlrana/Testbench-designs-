@@ -1,0 +1,503 @@
+tashen@tashen-HP-Pavilion-15-Laptop-PC:~/Documents/Testbenches$ verilator --binary -j 0 --trace --timing -Wall -Wno-PROCASSINIT --top tb_mem mem_dut.sv tb_mem.sv
+make: Entering directory '/home/tashen/Documents/Testbenches/obj_dir'
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -DVM_TRACE_SAIF=0 -DVM_VPI=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable  -DVM_PREFIX_INCLUDE="<Vtb_mem.h>"   -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated.o /usr/local/share/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -DVM_TRACE_SAIF=0 -DVM_VPI=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable  -DVM_PREFIX_INCLUDE="<Vtb_mem.h>"   -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_vcd_c.o /usr/local/share/verilator/include/verilated_vcd_c.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -DVM_TRACE_SAIF=0 -DVM_VPI=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable  -DVM_PREFIX_INCLUDE="<Vtb_mem.h>"   -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_timing.o /usr/local/share/verilator/include/verilated_timing.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -DVM_TRACE_SAIF=0 -DVM_VPI=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable  -DVM_PREFIX_INCLUDE="<Vtb_mem.h>"   -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_threads.o /usr/local/share/verilator/include/verilated_threads.cpp
+python3 /usr/local/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtb_mem.cpp Vtb_mem___024root__0.cpp Vtb_mem__main.cpp Vtb_mem__Trace__0.cpp Vtb_mem___024root__Slow.cpp Vtb_mem___024root__0__Slow.cpp Vtb_mem__Syms__Slow.cpp Vtb_mem__Trace__0__Slow.cpp Vtb_mem__TraceDecls__0__Slow.cpp > Vtb_mem__ALL.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -DVM_TRACE_SAIF=0 -DVM_VPI=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable  -DVM_PREFIX_INCLUDE="<Vtb_mem.h>"   -DVL_TIME_CONTEXT   -fcoroutines -c -o Vtb_mem__ALL.o Vtb_mem__ALL.cpp
+g++    verilated.o verilated_vcd_c.o verilated_timing.o verilated_threads.o Vtb_mem__ALL.a    -pthread -lpthread -latomic   -o Vtb_mem
+rm Vtb_mem__ALL.verilator_deplist.tmp
+make: Leaving directory '/home/tashen/Documents/Testbenches/obj_dir'
+- V e r i l a t i o n   R e p o r t: Verilator 5.054 2026-11-01 rev v5.054-62-ge4c94116f
+- Verilator: Built from 0.048 MB sources in 4 modules, into 0.071 MB in 9 C++ files needing 0.000 MB
+- Verilator: Walltime 1.341 s (elab=0.001, cvt=0.004, bld=1.333); cpu 0.011 s on 8 threads; allocated 21.449 MB
+tashen@tashen-HP-Pavilion-15-Laptop-PC:~/Documents/Testbenches$ ./obj_dir/Vtb_mem
+Seed=1
+[25] State: IDLE — starting write transaction
+[35] Cycle 0: WRITE: addr=0x0 data=0x59
+[55] Cycle 0: WRITE: addr=0x7 data=0x2d
+[75] Cycle 0: WRITE: addr=0x3 data=0x8
+[95] Cycle 0: WRITE: addr=0x4 data=0xa0
+[115] Cycle 0: WRITE: addr=0x7 data=0x57
+[135] Cycle 0: WRITE: addr=0x5 data=0x3d
+[155] Cycle 0: WRITE: addr=0x7 data=0xc0
+[175] Cycle 0: WRITE: addr=0x1 data=0xda
+[195] State: READ_REQ — addr=0x0
+[205] Cycle 0 PASS0
+[215] State: READ_REQ — addr=0x1
+[225] Cycle 0 PASS1
+[235] State: READ_REQ — addr=0x2
+[245] Cycle 0 PASS2
+[255] State: READ_REQ — addr=0x3
+[265] Cycle 0 PASS3
+[275] State: READ_REQ — addr=0x4
+[285] Cycle 0 PASS4
+[295] State: READ_REQ — addr=0x5
+[305] Cycle 0 PASS5
+[315] State: READ_REQ — addr=0x6
+[325] Cycle 0 PASS6
+[335] State: READ_REQ — addr=0x7
+[345] Cycle 0 PASS7
+[355] Cycle 1: WRITE: addr=0x4 data=0xd1
+[375] Cycle 1: WRITE: addr=0x5 data=0xca
+[395] Cycle 1: WRITE: addr=0x6 data=0x88
+[415] Cycle 1: WRITE: addr=0x3 data=0xa
+[435] Cycle 1: WRITE: addr=0x5 data=0xd3
+[455] Cycle 1: WRITE: addr=0x4 data=0x94
+[475] Cycle 1: WRITE: addr=0x2 data=0x5f
+[495] Cycle 1: WRITE: addr=0x2 data=0xdd
+[515] State: READ_REQ — addr=0x0
+[525] Cycle 1 PASS0
+[535] State: READ_REQ — addr=0x1
+[545] Cycle 1 PASS1
+[555] State: READ_REQ — addr=0x2
+[565] Cycle 1 PASS2
+[575] State: READ_REQ — addr=0x3
+[585] Cycle 1 PASS3
+[595] State: READ_REQ — addr=0x4
+[605] Cycle 1 PASS4
+[615] State: READ_REQ — addr=0x5
+[625] Cycle 1 PASS5
+[635] State: READ_REQ — addr=0x6
+[645] Cycle 1 PASS6
+[655] State: READ_REQ — addr=0x7
+[665] Cycle 1 PASS7
+[675] Cycle 2: WRITE: addr=0x4 data=0x69
+[695] Cycle 2: WRITE: addr=0x0 data=0xfb
+[715] Cycle 2: WRITE: addr=0x1 data=0x6c
+[735] Cycle 2: WRITE: addr=0x3 data=0x6c
+[755] Cycle 2: WRITE: addr=0x6 data=0x68
+[775] Cycle 2: WRITE: addr=0x4 data=0xff
+[795] Cycle 2: WRITE: addr=0x4 data=0x1c
+[815] Cycle 2: WRITE: addr=0x0 data=0x33
+[835] State: READ_REQ — addr=0x0
+[845] Cycle 2 PASS0
+[855] State: READ_REQ — addr=0x1
+[865] Cycle 2 PASS1
+[875] State: READ_REQ — addr=0x2
+[885] Cycle 2 PASS2
+[895] State: READ_REQ — addr=0x3
+[905] Cycle 2 PASS3
+[915] State: READ_REQ — addr=0x4
+[925] Cycle 2 PASS4
+[935] State: READ_REQ — addr=0x5
+[945] Cycle 2 PASS5
+[955] State: READ_REQ — addr=0x6
+[965] Cycle 2 PASS6
+[975] State: READ_REQ — addr=0x7
+[985] Cycle 2 PASS7
+[995] Cycle 3: WRITE: addr=0x4 data=0xea
+[1015] Cycle 3: WRITE: addr=0x6 data=0x9f
+[1035] Cycle 3: WRITE: addr=0x0 data=0xcb
+[1055] Cycle 3: WRITE: addr=0x6 data=0x19
+[1075] Cycle 3: WRITE: addr=0x0 data=0x8
+[1095] Cycle 3: WRITE: addr=0x7 data=0x11
+[1115] Cycle 3: WRITE: addr=0x3 data=0x5
+[1135] Cycle 3: WRITE: addr=0x6 data=0x2c
+[1155] State: READ_REQ — addr=0x0
+[1165] Cycle 3 PASS0
+[1175] State: READ_REQ — addr=0x1
+[1185] Cycle 3 PASS1
+[1195] State: READ_REQ — addr=0x2
+[1205] Cycle 3 PASS2
+[1215] State: READ_REQ — addr=0x3
+[1225] Cycle 3 PASS3
+[1235] State: READ_REQ — addr=0x4
+[1245] Cycle 3 PASS4
+[1255] State: READ_REQ — addr=0x5
+[1265] Cycle 3 PASS5
+[1275] State: READ_REQ — addr=0x6
+[1285] Cycle 3 PASS6
+[1295] State: READ_REQ — addr=0x7
+[1305] Cycle 3 PASS7
+[1315] Cycle 4: WRITE: addr=0x0 data=0xef
+[1335] Cycle 4: WRITE: addr=0x6 data=0x70
+[1355] Cycle 4: WRITE: addr=0x7 data=0x91
+[1375] Cycle 4: WRITE: addr=0x1 data=0x7d
+[1395] Cycle 4: WRITE: addr=0x3 data=0xfe
+[1415] Cycle 4: WRITE: addr=0x3 data=0xcd
+[1435] Cycle 4: WRITE: addr=0x4 data=0xd4
+[1455] Cycle 4: WRITE: addr=0x1 data=0x2f
+[1475] State: READ_REQ — addr=0x0
+[1485] Cycle 4 PASS0
+[1495] State: READ_REQ — addr=0x1
+[1505] Cycle 4 PASS1
+[1515] State: READ_REQ — addr=0x2
+[1525] Cycle 4 PASS2
+[1535] State: READ_REQ — addr=0x3
+[1545] Cycle 4 PASS3
+[1555] State: READ_REQ — addr=0x4
+[1565] Cycle 4 PASS4
+[1575] State: READ_REQ — addr=0x5
+[1585] Cycle 4 PASS5
+[1595] State: READ_REQ — addr=0x6
+[1605] Cycle 4 PASS6
+[1615] State: READ_REQ — addr=0x7
+[1625] Cycle 4 PASS7
+[1635] Cycle 5: WRITE: addr=0x5 data=0x35
+[1655] Cycle 5: WRITE: addr=0x4 data=0xf
+[1675] Cycle 5: WRITE: addr=0x2 data=0x28
+[1695] Cycle 5: WRITE: addr=0x7 data=0xc
+[1715] Cycle 5: WRITE: addr=0x5 data=0x25
+[1735] Cycle 5: WRITE: addr=0x3 data=0x5c
+[1755] Cycle 5: WRITE: addr=0x1 data=0x2d
+[1775] Cycle 5: WRITE: addr=0x7 data=0x19
+[1795] State: READ_REQ — addr=0x0
+[1805] Cycle 5 PASS0
+[1815] State: READ_REQ — addr=0x1
+[1825] Cycle 5 PASS1
+[1835] State: READ_REQ — addr=0x2
+[1845] Cycle 5 PASS2
+[1855] State: READ_REQ — addr=0x3
+[1865] Cycle 5 PASS3
+[1875] State: READ_REQ — addr=0x4
+[1885] Cycle 5 PASS4
+[1895] State: READ_REQ — addr=0x5
+[1905] Cycle 5 PASS5
+[1915] State: READ_REQ — addr=0x6
+[1925] Cycle 5 PASS6
+[1935] State: READ_REQ — addr=0x7
+[1945] Cycle 5 PASS7
+[1955] Cycle 6: WRITE: addr=0x0 data=0xd4
+[1975] Cycle 6: WRITE: addr=0x6 data=0x9e
+[1995] Cycle 6: WRITE: addr=0x4 data=0x38
+[2015] Cycle 6: WRITE: addr=0x7 data=0x22
+[2035] Cycle 6: WRITE: addr=0x0 data=0xcd
+[2055] Cycle 6: WRITE: addr=0x3 data=0x25
+[2075] Cycle 6: WRITE: addr=0x6 data=0xdc
+[2095] Cycle 6: WRITE: addr=0x3 data=0x14
+[2115] State: READ_REQ — addr=0x0
+[2125] Cycle 6 PASS0
+[2135] State: READ_REQ — addr=0x1
+[2145] Cycle 6 PASS1
+[2155] State: READ_REQ — addr=0x2
+[2165] Cycle 6 PASS2
+[2175] State: READ_REQ — addr=0x3
+[2185] Cycle 6 PASS3
+[2195] State: READ_REQ — addr=0x4
+[2205] Cycle 6 PASS4
+[2215] State: READ_REQ — addr=0x5
+[2225] Cycle 6 PASS5
+[2235] State: READ_REQ — addr=0x6
+[2245] Cycle 6 PASS6
+[2255] State: READ_REQ — addr=0x7
+[2265] Cycle 6 PASS7
+[2275] Cycle 7: WRITE: addr=0x4 data=0x8b
+[2295] Cycle 7: WRITE: addr=0x1 data=0x24
+[2315] Cycle 7: WRITE: addr=0x4 data=0xa3
+[2335] Cycle 7: WRITE: addr=0x5 data=0xe2
+[2355] Cycle 7: WRITE: addr=0x7 data=0x6
+[2375] Cycle 7: WRITE: addr=0x3 data=0x41
+[2395] Cycle 7: WRITE: addr=0x0 data=0xaa
+[2415] Cycle 7: WRITE: addr=0x1 data=0x21
+[2435] State: READ_REQ — addr=0x0
+[2445] Cycle 7 PASS0
+[2455] State: READ_REQ — addr=0x1
+[2465] Cycle 7 PASS1
+[2475] State: READ_REQ — addr=0x2
+[2485] Cycle 7 PASS2
+[2495] State: READ_REQ — addr=0x3
+[2505] Cycle 7 PASS3
+[2515] State: READ_REQ — addr=0x4
+[2525] Cycle 7 PASS4
+[2535] State: READ_REQ — addr=0x5
+[2545] Cycle 7 PASS5
+[2555] State: READ_REQ — addr=0x6
+[2565] Cycle 7 PASS6
+[2575] State: READ_REQ — addr=0x7
+[2585] Cycle 7 PASS7
+[2595] Cycle 8: WRITE: addr=0x3 data=0xb8
+[2615] Cycle 8: WRITE: addr=0x5 data=0xe1
+[2635] Cycle 8: WRITE: addr=0x4 data=0x38
+[2655] Cycle 8: WRITE: addr=0x7 data=0xc9
+[2675] Cycle 8: WRITE: addr=0x7 data=0xa7
+[2695] Cycle 8: WRITE: addr=0x4 data=0xd
+[2715] Cycle 8: WRITE: addr=0x3 data=0xcd
+[2735] Cycle 8: WRITE: addr=0x2 data=0x90
+[2755] State: READ_REQ — addr=0x0
+[2765] Cycle 8 PASS0
+[2775] State: READ_REQ — addr=0x1
+[2785] Cycle 8 PASS1
+[2795] State: READ_REQ — addr=0x2
+[2805] Cycle 8 PASS2
+[2815] State: READ_REQ — addr=0x3
+[2825] Cycle 8 PASS3
+[2835] State: READ_REQ — addr=0x4
+[2845] Cycle 8 PASS4
+[2855] State: READ_REQ — addr=0x5
+[2865] Cycle 8 PASS5
+[2875] State: READ_REQ — addr=0x6
+[2885] Cycle 8 PASS6
+[2895] State: READ_REQ — addr=0x7
+[2905] Cycle 8 PASS7
+[2915] Cycle 9: WRITE: addr=0x3 data=0xee
+[2935] Cycle 9: WRITE: addr=0x6 data=0x55
+[2955] Cycle 9: WRITE: addr=0x0 data=0x87
+[2975] Cycle 9: WRITE: addr=0x3 data=0x77
+[2995] Cycle 9: WRITE: addr=0x2 data=0x87
+[3015] Cycle 9: WRITE: addr=0x3 data=0x0
+[3035] Cycle 9: WRITE: addr=0x0 data=0x27
+[3055] Cycle 9: WRITE: addr=0x2 data=0xce
+[3075] State: READ_REQ — addr=0x0
+[3085] Cycle 9 PASS0
+[3095] State: READ_REQ — addr=0x1
+[3105] Cycle 9 PASS1
+[3115] State: READ_REQ — addr=0x2
+[3125] Cycle 9 PASS2
+[3135] State: READ_REQ — addr=0x3
+[3145] Cycle 9 PASS3
+[3155] State: READ_REQ — addr=0x4
+[3165] Cycle 9 PASS4
+[3175] State: READ_REQ — addr=0x5
+[3185] Cycle 9 PASS5
+[3195] State: READ_REQ — addr=0x6
+[3205] Cycle 9 PASS6
+[3215] State: READ_REQ — addr=0x7
+[3225] Cycle 9 PASS7
+[3235] Cycle 10: WRITE: addr=0x6 data=0x8a
+[3255] Cycle 10: WRITE: addr=0x6 data=0x8d
+[3275] Cycle 10: WRITE: addr=0x7 data=0xa
+[3295] Cycle 10: WRITE: addr=0x3 data=0xf
+[3315] Cycle 10: WRITE: addr=0x4 data=0x66
+[3335] Cycle 10: WRITE: addr=0x1 data=0xf9
+[3355] Cycle 10: WRITE: addr=0x5 data=0x1b
+[3375] Cycle 10: WRITE: addr=0x3 data=0xcd
+[3395] State: READ_REQ — addr=0x0
+[3405] Cycle 10 PASS0
+[3415] State: READ_REQ — addr=0x1
+[3425] Cycle 10 PASS1
+[3435] State: READ_REQ — addr=0x2
+[3445] Cycle 10 PASS2
+[3455] State: READ_REQ — addr=0x3
+[3465] Cycle 10 PASS3
+[3475] State: READ_REQ — addr=0x4
+[3485] Cycle 10 PASS4
+[3495] State: READ_REQ — addr=0x5
+[3505] Cycle 10 PASS5
+[3515] State: READ_REQ — addr=0x6
+[3525] Cycle 10 PASS6
+[3535] State: READ_REQ — addr=0x7
+[3545] Cycle 10 PASS7
+[3555] Cycle 11: WRITE: addr=0x7 data=0x10
+[3575] Cycle 11: WRITE: addr=0x1 data=0x80
+[3595] Cycle 11: WRITE: addr=0x4 data=0xba
+[3615] Cycle 11: WRITE: addr=0x7 data=0xa
+[3635] Cycle 11: WRITE: addr=0x3 data=0xb9
+[3655] Cycle 11: WRITE: addr=0x6 data=0x2c
+[3675] Cycle 11: WRITE: addr=0x5 data=0x3e
+[3695] Cycle 11: WRITE: addr=0x4 data=0x73
+[3715] State: READ_REQ — addr=0x0
+[3725] Cycle 11 PASS0
+[3735] State: READ_REQ — addr=0x1
+[3745] Cycle 11 PASS1
+[3755] State: READ_REQ — addr=0x2
+[3765] Cycle 11 PASS2
+[3775] State: READ_REQ — addr=0x3
+[3785] Cycle 11 PASS3
+[3795] State: READ_REQ — addr=0x4
+[3805] Cycle 11 PASS4
+[3815] State: READ_REQ — addr=0x5
+[3825] Cycle 11 PASS5
+[3835] State: READ_REQ — addr=0x6
+[3845] Cycle 11 PASS6
+[3855] State: READ_REQ — addr=0x7
+[3865] Cycle 11 PASS7
+[3875] Cycle 12: WRITE: addr=0x0 data=0xc5
+[3895] Cycle 12: WRITE: addr=0x1 data=0x5e
+[3915] Cycle 12: WRITE: addr=0x5 data=0xe9
+[3935] Cycle 12: WRITE: addr=0x4 data=0x69
+[3955] Cycle 12: WRITE: addr=0x4 data=0xc7
+[3975] Cycle 12: WRITE: addr=0x5 data=0x73
+[3995] Cycle 12: WRITE: addr=0x7 data=0x1d
+[4015] Cycle 12: WRITE: addr=0x2 data=0xe5
+[4035] State: READ_REQ — addr=0x0
+[4045] Cycle 12 PASS0
+[4055] State: READ_REQ — addr=0x1
+[4065] Cycle 12 PASS1
+[4075] State: READ_REQ — addr=0x2
+[4085] Cycle 12 PASS2
+[4095] State: READ_REQ — addr=0x3
+[4105] Cycle 12 PASS3
+[4115] State: READ_REQ — addr=0x4
+[4125] Cycle 12 PASS4
+[4135] State: READ_REQ — addr=0x5
+[4145] Cycle 12 PASS5
+[4155] State: READ_REQ — addr=0x6
+[4165] Cycle 12 PASS6
+[4175] State: READ_REQ — addr=0x7
+[4185] Cycle 12 PASS7
+[4195] Cycle 13: WRITE: addr=0x0 data=0x5
+[4215] Cycle 13: WRITE: addr=0x5 data=0xf7
+[4235] Cycle 13: WRITE: addr=0x4 data=0x26
+[4255] Cycle 13: WRITE: addr=0x6 data=0xb3
+[4275] Cycle 13: WRITE: addr=0x5 data=0x28
+[4295] Cycle 13: WRITE: addr=0x0 data=0x11
+[4315] Cycle 13: WRITE: addr=0x4 data=0xcb
+[4335] Cycle 13: WRITE: addr=0x1 data=0x3
+[4355] State: READ_REQ — addr=0x0
+[4365] Cycle 13 PASS0
+[4375] State: READ_REQ — addr=0x1
+[4385] Cycle 13 PASS1
+[4395] State: READ_REQ — addr=0x2
+[4405] Cycle 13 PASS2
+[4415] State: READ_REQ — addr=0x3
+[4425] Cycle 13 PASS3
+[4435] State: READ_REQ — addr=0x4
+[4445] Cycle 13 PASS4
+[4455] State: READ_REQ — addr=0x5
+[4465] Cycle 13 PASS5
+[4475] State: READ_REQ — addr=0x6
+[4485] Cycle 13 PASS6
+[4495] State: READ_REQ — addr=0x7
+[4505] Cycle 13 PASS7
+[4515] Cycle 14: WRITE: addr=0x7 data=0x7c
+[4535] Cycle 14: WRITE: addr=0x4 data=0xa0
+[4555] Cycle 14: WRITE: addr=0x2 data=0xcd
+[4575] Cycle 14: WRITE: addr=0x2 data=0x82
+[4595] Cycle 14: WRITE: addr=0x2 data=0x2a
+[4615] Cycle 14: WRITE: addr=0x5 data=0xe1
+[4635] Cycle 14: WRITE: addr=0x0 data=0xf6
+[4655] Cycle 14: WRITE: addr=0x7 data=0xbe
+[4675] State: READ_REQ — addr=0x0
+[4685] Cycle 14 PASS0
+[4695] State: READ_REQ — addr=0x1
+[4705] Cycle 14 PASS1
+[4715] State: READ_REQ — addr=0x2
+[4725] Cycle 14 PASS2
+[4735] State: READ_REQ — addr=0x3
+[4745] Cycle 14 PASS3
+[4755] State: READ_REQ — addr=0x4
+[4765] Cycle 14 PASS4
+[4775] State: READ_REQ — addr=0x5
+[4785] Cycle 14 PASS5
+[4795] State: READ_REQ — addr=0x6
+[4805] Cycle 14 PASS6
+[4815] State: READ_REQ — addr=0x7
+[4825] Cycle 14 PASS7
+[4835] Cycle 15: WRITE: addr=0x7 data=0x71
+[4855] Cycle 15: WRITE: addr=0x0 data=0xe
+[4875] Cycle 15: WRITE: addr=0x0 data=0x50
+[4895] Cycle 15: WRITE: addr=0x0 data=0xce
+[4915] Cycle 15: WRITE: addr=0x1 data=0x0
+[4935] Cycle 15: WRITE: addr=0x1 data=0xd9
+[4955] Cycle 15: WRITE: addr=0x4 data=0x33
+[4975] Cycle 15: WRITE: addr=0x6 data=0x18
+[4995] State: READ_REQ — addr=0x0
+[5005] Cycle 15 PASS0
+[5015] State: READ_REQ — addr=0x1
+[5025] Cycle 15 PASS1
+[5035] State: READ_REQ — addr=0x2
+[5045] Cycle 15 PASS2
+[5055] State: READ_REQ — addr=0x3
+[5065] Cycle 15 PASS3
+[5075] State: READ_REQ — addr=0x4
+[5085] Cycle 15 PASS4
+[5095] State: READ_REQ — addr=0x5
+[5105] Cycle 15 PASS5
+[5115] State: READ_REQ — addr=0x6
+[5125] Cycle 15 PASS6
+[5135] State: READ_REQ — addr=0x7
+[5145] Cycle 15 PASS7
+[5155] Cycle 16: WRITE: addr=0x2 data=0xb
+[5175] Cycle 16: WRITE: addr=0x3 data=0xba
+[5195] Cycle 16: WRITE: addr=0x4 data=0x32
+[5215] Cycle 16: WRITE: addr=0x2 data=0x56
+[5235] Cycle 16: WRITE: addr=0x7 data=0x46
+[5255] Cycle 16: WRITE: addr=0x4 data=0x2d
+[5275] Cycle 16: WRITE: addr=0x7 data=0xf0
+[5295] Cycle 16: WRITE: addr=0x5 data=0x30
+[5315] State: READ_REQ — addr=0x0
+[5325] Cycle 16 PASS0
+[5335] State: READ_REQ — addr=0x1
+[5345] Cycle 16 PASS1
+[5355] State: READ_REQ — addr=0x2
+[5365] Cycle 16 PASS2
+[5375] State: READ_REQ — addr=0x3
+[5385] Cycle 16 PASS3
+[5395] State: READ_REQ — addr=0x4
+[5405] Cycle 16 PASS4
+[5415] State: READ_REQ — addr=0x5
+[5425] Cycle 16 PASS5
+[5435] State: READ_REQ — addr=0x6
+[5445] Cycle 16 PASS6
+[5455] State: READ_REQ — addr=0x7
+[5465] Cycle 16 PASS7
+[5475] Cycle 17: WRITE: addr=0x3 data=0xf0
+[5495] Cycle 17: WRITE: addr=0x1 data=0x29
+[5515] Cycle 17: WRITE: addr=0x4 data=0x42
+[5535] Cycle 17: WRITE: addr=0x7 data=0x45
+[5555] Cycle 17: WRITE: addr=0x6 data=0xd2
+[5575] Cycle 17: WRITE: addr=0x3 data=0xab
+[5595] Cycle 17: WRITE: addr=0x1 data=0x7c
+[5615] Cycle 17: WRITE: addr=0x5 data=0x58
+[5635] State: READ_REQ — addr=0x0
+[5645] Cycle 17 PASS0
+[5655] State: READ_REQ — addr=0x1
+[5665] Cycle 17 PASS1
+[5675] State: READ_REQ — addr=0x2
+[5685] Cycle 17 PASS2
+[5695] State: READ_REQ — addr=0x3
+[5705] Cycle 17 PASS3
+[5715] State: READ_REQ — addr=0x4
+[5725] Cycle 17 PASS4
+[5735] State: READ_REQ — addr=0x5
+[5745] Cycle 17 PASS5
+[5755] State: READ_REQ — addr=0x6
+[5765] Cycle 17 PASS6
+[5775] State: READ_REQ — addr=0x7
+[5785] Cycle 17 PASS7
+[5795] Cycle 18: WRITE: addr=0x1 data=0x85
+[5815] Cycle 18: WRITE: addr=0x0 data=0xd5
+[5835] Cycle 18: WRITE: addr=0x5 data=0x21
+[5855] Cycle 18: WRITE: addr=0x6 data=0x95
+[5875] Cycle 18: WRITE: addr=0x3 data=0x19
+[5895] Cycle 18: WRITE: addr=0x4 data=0x49
+[5915] Cycle 18: WRITE: addr=0x4 data=0x71
+[5935] Cycle 18: WRITE: addr=0x1 data=0x23
+[5955] State: READ_REQ — addr=0x0
+[5965] Cycle 18 PASS0
+[5975] State: READ_REQ — addr=0x1
+[5985] Cycle 18 PASS1
+[5995] State: READ_REQ — addr=0x2
+[6005] Cycle 18 PASS2
+[6015] State: READ_REQ — addr=0x3
+[6025] Cycle 18 PASS3
+[6035] State: READ_REQ — addr=0x4
+[6045] Cycle 18 PASS4
+[6055] State: READ_REQ — addr=0x5
+[6065] Cycle 18 PASS5
+[6075] State: READ_REQ — addr=0x6
+[6085] Cycle 18 PASS6
+[6095] State: READ_REQ — addr=0x7
+[6105] Cycle 18 PASS7
+[6115] Cycle 19: WRITE: addr=0x7 data=0x0
+[6135] Cycle 19: WRITE: addr=0x6 data=0xa1
+[6155] Cycle 19: WRITE: addr=0x7 data=0x3c
+[6175] Cycle 19: WRITE: addr=0x3 data=0x3d
+[6195] Cycle 19: WRITE: addr=0x4 data=0x6d
+[6215] Cycle 19: WRITE: addr=0x7 data=0x66
+[6235] Cycle 19: WRITE: addr=0x2 data=0x95
+[6255] Cycle 19: WRITE: addr=0x4 data=0xd8
+[6275] State: READ_REQ — addr=0x0
+[6285] Cycle 19 PASS0
+[6295] State: READ_REQ — addr=0x1
+[6305] Cycle 19 PASS1
+[6315] State: READ_REQ — addr=0x2
+[6325] Cycle 19 PASS2
+[6335] State: READ_REQ — addr=0x3
+[6345] Cycle 19 PASS3
+[6355] State: READ_REQ — addr=0x4
+[6365] Cycle 19 PASS4
+[6375] State: READ_REQ — addr=0x5
+[6385] Cycle 19 PASS5
+[6395] State: READ_REQ — addr=0x6
+[6405] Cycle 19 PASS6
+[6415] State: READ_REQ — addr=0x7
+[6425] Cycle 19 PASS7
+All 20 cycles  complete, finishing test
+- tb_mem.sv:136: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.054 2026-11-01
+- Verilator: $finish at 6ns; walltime 0.005 s; speed 1.231 us/s
+- Verilator: cpu 0.005 s on 1 threads; allocated 4 MB
+

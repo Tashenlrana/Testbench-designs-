@@ -5,21 +5,21 @@
 // The class here is then constructed to instantiate the design.
 // See the Verilator manual for examples.
 
-#ifndef VERILATED_VTB_ADDER_SELFCHECK_H_
-#define VERILATED_VTB_ADDER_SELFCHECK_H_  // guard
+#ifndef VERILATED_VTB_MEM_H_
+#define VERILATED_VTB_MEM_H_  // guard
 
 #include "verilated.h"
 
-class Vtb_adder_selfcheck__Syms;
-class Vtb_adder_selfcheck___024root;
+class Vtb_mem__Syms;
+class Vtb_mem___024root;
 class VerilatedVcdC;
 
 // This class is the main interface to the Verilated model
-class alignas(VL_CACHE_LINE_BYTES) Vtb_adder_selfcheck VL_NOT_FINAL : public VerilatedModel {
-    friend class Vtb_adder_selfcheck__Syms;
+class alignas(VL_CACHE_LINE_BYTES) Vtb_mem VL_NOT_FINAL : public VerilatedModel {
+    friend class Vtb_mem__Syms;
   private:
     // Symbol table holding complete model state (owned by this class)
-    Vtb_adder_selfcheck__Syms* const vlSymsp;
+    Vtb_mem__Syms* const vlSymsp;
     // Evaluation loop
     VerilatedEvalLoop m_evalLoop;
 
@@ -39,32 +39,32 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_adder_selfcheck VL_NOT_FINAL : public Ver
 
     // Root instance pointer to allow access to model internals,
     // including inlined /* verilator public_flat_* */ items.
-    Vtb_adder_selfcheck___024root* const rootp;
+    Vtb_mem___024root* const rootp;
 
     // CONSTRUCTORS
     /// Construct the model; called by application code
     /// If contextp is null, then the model will use the default global context
     /// If name is "", then makes a wrapper with a
     /// single model invisible with respect to DPI scope names.
-    explicit Vtb_adder_selfcheck(VerilatedContext* contextp, const char* name = "TOP");
-    explicit Vtb_adder_selfcheck(const char* name = "TOP");
+    explicit Vtb_mem(VerilatedContext* contextp, const char* name = "TOP");
+    explicit Vtb_mem(const char* name = "TOP");
     /// Destroy the model; called (often implicitly) by application code
-    virtual ~Vtb_adder_selfcheck();
+    virtual ~Vtb_mem();
   private:
-    VL_UNCOPYABLE(Vtb_adder_selfcheck);  ///< Copying not allowed
+    VL_UNCOPYABLE(Vtb_mem);  ///< Copying not allowed
 
   protected:
-    Vtb_adder_selfcheck(VerilatedContext* contextp, const char* name, bool isRoot);
+    Vtb_mem(VerilatedContext* contextp, const char* name, bool isRoot);
 
   public:
     // API METHODS
     /// Evaluate the model.  Application must call when inputs change.
-    void eval() { eval_step(); }
+    void eval() { eval_step(); eval_end_step(); }
     /// Evaluate when calling multiple units/models per time step.
     void eval_step();
     /// Evaluate at end of a timestep for tracing, when using eval_step().
     /// Application must call after all eval() and before time changes.
-    void eval_end_step() {}
+    void eval_end_step();
     /// Simulation complete, run final blocks.  Application must call on completion.
     void final();
     /// Are there scheduled events to handle?

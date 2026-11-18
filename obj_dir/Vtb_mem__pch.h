@@ -3,10 +3,10 @@
 //
 // Internal details; most user sources do not need this header,
 // unless using verilator public meta comments.
-// Suggest use Vtb_adder_selfcheck.h instead.
+// Suggest use Vtb_mem.h instead.
 
-#ifndef VERILATED_VTB_ADDER_SELFCHECK__PCH_H_
-#define VERILATED_VTB_ADDER_SELFCHECK__PCH_H_  // guard
+#ifndef VERILATED_VTB_MEM__PCH_H_
+#define VERILATED_VTB_MEM__PCH_H_  // guard
 
 // GCC and Clang only will precompile headers (PCH) for the first header.
 // So, make sure this is the one and only PCH.
@@ -19,8 +19,8 @@
 
 #include "verilated.h"
 
-#include "Vtb_adder_selfcheck__Syms.h"
-#include "Vtb_adder_selfcheck.h"
+#include "Vtb_mem__Syms.h"
+#include "Vtb_mem.h"
 
 // Additional include files added using '--compiler-include'
 
