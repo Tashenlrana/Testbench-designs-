@@ -2,9 +2,9 @@
 # DESCRIPTION: Verilator output: Makefile for building Verilated archive or executable
 #
 # Execute this makefile from the object directory:
-#    make -f Vtb_mem.mk
+#    make -f Vmemory_tb.mk
 
-default: Vtb_mem
+default: Vmemory_tb
 
 ### Constants...
 # Perl executable (from $PERL, defaults to 'perl' if not set)
@@ -32,11 +32,11 @@ VM_SC_TARGET_ARCH = linux
 
 ### Vars...
 # Module prefix (from --prefix)
-VM_MODPREFIX = Vtb_mem
+VM_MODPREFIX = Vmemory_tb
 # Design prefix (from --prefix)
-VM_PREFIX = Vtb_mem
+VM_PREFIX = Vmemory_tb
 # Design header include, for '#include VM_PREFIX_INCLUDE' (from --prefix)
-VM_PREFIX_INCLUDE = <Vtb_mem.h>
+VM_PREFIX_INCLUDE = <Vmemory_tb.h>
 # User CFLAGS (from -CFLAGS on Verilator command line)
 VM_USER_CFLAGS = \
   -DVL_TIME_CONTEXT \
@@ -57,7 +57,7 @@ VM_USER_DIR = \
 
 ### Default rules...
 # Include list of all generated classes
-include Vtb_mem_classes.mk
+include Vmemory_tb_classes.mk
 # Include global rules
 include $(VERILATOR_ROOT)/include/verilated.mk
 
@@ -66,7 +66,7 @@ VPATH += $(VM_USER_DIR)
 
 
 ### Link rules... (from --exe)
-Vtb_mem: $(VK_USER_OBJS) $(VK_GLOBAL_OBJS) $(VM_PREFIX)__ALL.a $(VM_USER_LDLIBS_FILES)
+Vmemory_tb: $(VK_USER_OBJS) $(VK_GLOBAL_OBJS) $(VM_PREFIX)__ALL.a $(VM_USER_LDLIBS_FILES)
 	$(LINK) $(LDFLAGS) $(filter-out $(VM_USER_LDLIBS_FILES),$^) $(LOADLIBES) $(LDLIBS) $(LIBS) $(SC_LIBS) -o $@
 
 # Verilated -*- Makefile -*-

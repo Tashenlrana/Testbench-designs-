@@ -1,6 +1,7 @@
-//Challenge: Make the Memory Testbench Self-Checking
+//Challenge: Make the Memory Testbench Self-Checking (Final)
 //Self-checking testbench for the 8x8 synchronous memory with acknowledge handshake
-module tb_mem;
+//mem_dut.sv will be the DUT
+module memory_tb;
 
     // ── DUT signals ────────────────────────────────────────────────
     reg        clk;
@@ -37,9 +38,12 @@ module tb_mem;
     parameter DONE       = 4;
 
     integer state;
+    integer cycle;
     reg [7:0] shadow_mem[0:7];//Reference model: mirrors DUT Memory
-    reg [7:0] written_data;//saves write data for the read back check
     integer pass_count, fail_count;
+    //reg [2:0] written_addr;
+
+
 
 
     // ── Testbench FSM ──────────────────────────────────────────────
@@ -51,6 +55,7 @@ module tb_mem;
         rd_en   = 0;
         addr    = 0;
         wr_data = 0;
+        cycle=0;
 
         $display("Seed=%0d",$get_initial_random_seed());
         pass_count=0; fail_count=0; 
@@ -88,9 +93,10 @@ module tb_mem;
                 // ── WRITE_REQ: Random inputs + update shadow memory ──
                 WRITE_REQ: begin
                     wr_en   = 1;          // assert write enable
-                    addr    = $urandom%8;       // target address 4
-                    wr_data = $urandom;      // data to store
-                    shadow_mem[addr]=wr_data;
+                    addr    = 3'($urandom%8);       // target address 4
+                    wr_data = 8'($urandom);      // data to store
+                    shadow_mem[addr]=wr_data;//Reference model tracks every write
+                    //written_addr=addr;
                     $display("[%0t] State: WRITE_REQ — addr=0x%0h data=0x%0h",
                               $time, addr, wr_data);
                     state   = WRITE_WAIT;
@@ -114,7 +120,8 @@ module tb_mem;
                 // ── READ_REQ: request data back from same address ───
                 READ_REQ: begin
                     rd_en  = 1;           // assert read enable
-                    addr   = 3'h4;        // same address we wrote
+                    addr   = 3'($urandom%8);        // reading random adderss rather than reading just written address by using written_addr
+                    //because it catches a DUT that returns stale data from the wrong location.
                     $display("[%0t] State: READ_REQ — addr=0x%0h", $time, addr);
                     state  = DONE;
                 end
@@ -131,7 +138,7 @@ module tb_mem;
                             pass_count = pass_count+1;
 
                             cycle=cycle+1;
-                            if(cycle<50)
+                            if(cycle<500)// so all 8 locations get hit repeatedly
                             state=WRITE_REQ;
                         else begin
                             $display("RESULTS: %0D PASSED, %0D FAILED",pass_count,fail_count);

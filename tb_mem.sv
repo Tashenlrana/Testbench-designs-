@@ -1,6 +1,7 @@
 //Linear random testbench practice for a simple memory interface
 //Challenge: Extend to a Memory Interface
 //Linear random testbench for the 8x8 synchronous memory with acknowledge handshake
+//mem_dut.sv will be the DUT
 module tb_mem;
 
     // ── DUT signals ────────────────────────────────────────────────

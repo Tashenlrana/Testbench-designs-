@@ -1,0 +1,1524 @@
+tashen@tashen-HP-Pavilion-15-Laptop-PC:~/Documents/Testbenches$ verilator --binary -j 0 --trace --timing -Wall -Wno-PROCASSINIT --top memory_tb mem_dut.sv memory_tb.sv
+make: Entering directory '/home/tashen/Documents/Testbenches/obj_dir'
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -DVM_TRACE_SAIF=0 -DVM_VPI=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable  -DVM_PREFIX_INCLUDE="<Vmemory_tb.h>"   -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated.o /usr/local/share/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -DVM_TRACE_SAIF=0 -DVM_VPI=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable  -DVM_PREFIX_INCLUDE="<Vmemory_tb.h>"   -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_vcd_c.o /usr/local/share/verilator/include/verilated_vcd_c.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -DVM_TRACE_SAIF=0 -DVM_VPI=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable  -DVM_PREFIX_INCLUDE="<Vmemory_tb.h>"   -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_timing.o /usr/local/share/verilator/include/verilated_timing.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -DVM_TRACE_SAIF=0 -DVM_VPI=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable  -DVM_PREFIX_INCLUDE="<Vmemory_tb.h>"   -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_threads.o /usr/local/share/verilator/include/verilated_threads.cpp
+python3 /usr/local/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vmemory_tb.cpp Vmemory_tb___024root__0.cpp Vmemory_tb__main.cpp Vmemory_tb__Trace__0.cpp Vmemory_tb___024root__Slow.cpp Vmemory_tb___024root__0__Slow.cpp Vmemory_tb__Syms__Slow.cpp Vmemory_tb__Trace__0__Slow.cpp Vmemory_tb__TraceDecls__0__Slow.cpp > Vmemory_tb__ALL.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVERILATOR=1 -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -DVM_TRACE_SAIF=0 -DVM_VPI=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-int-in-bool-context -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable  -DVM_PREFIX_INCLUDE="<Vmemory_tb.h>"   -DVL_TIME_CONTEXT   -fcoroutines -c -o Vmemory_tb__ALL.o Vmemory_tb__ALL.cpp
+g++    verilated.o verilated_vcd_c.o verilated_timing.o verilated_threads.o Vmemory_tb__ALL.a    -pthread -lpthread -latomic   -o Vmemory_tb
+rm Vmemory_tb__ALL.verilator_deplist.tmp
+make: Leaving directory '/home/tashen/Documents/Testbenches/obj_dir'
+- V e r i l a t i o n   R e p o r t: Verilator 5.054 2026-11-01 rev v5.054-62-ge4c94116f
+- Verilator: Built from 0.048 MB sources in 4 modules, into 0.071 MB in 9 C++ files needing 0.000 MB
+- Verilator: Walltime 1.090 s (elab=0.001, cvt=0.004, bld=1.082); cpu 0.012 s on 8 threads; allocated 21.613 MB
+tashen@tashen-HP-Pavilion-15-Laptop-PC:~/Documents/Testbenches$ ./obj_dir/Vmemory_tb
+Seed=1
+[25] State: IDLE — starting write transaction
+[35] State: WRITE_REQ — addr=0x0 data=0x59
+[45] State: WRITE_WAIT — ack received, write complete
+[55] State: READ_REQ — addr=0x7
+[75] State: WRITE_REQ — addr=0x5 data=0xf3
+[85] State: WRITE_WAIT — ack received, write complete
+[95] State: READ_REQ — addr=0x0
+[115] State: WRITE_REQ — addr=0x4 data=0xa0
+[125] State: WRITE_WAIT — ack received, write complete
+[135] State: READ_REQ — addr=0x7
+[155] State: WRITE_REQ — addr=0x7 data=0x4d
+[165] State: WRITE_WAIT — ack received, write complete
+[175] State: READ_REQ — addr=0x5
+[195] State: WRITE_REQ — addr=0x7 data=0xc0
+[205] State: WRITE_WAIT — ack received, write complete
+[215] State: READ_REQ — addr=0x1
+[235] State: WRITE_REQ — addr=0x2 data=0xbc
+[245] State: WRITE_WAIT — ack received, write complete
+[255] State: READ_REQ — addr=0x1
+[275] State: WRITE_REQ — addr=0x5 data=0xca
+[285] State: WRITE_WAIT — ack received, write complete
+[295] State: READ_REQ — addr=0x6
+[315] State: WRITE_REQ — addr=0x0 data=0x53
+[325] State: WRITE_WAIT — ack received, write complete
+[335] State: READ_REQ — addr=0x2
+[355] State: WRITE_REQ — addr=0x5 data=0xd3
+[365] State: WRITE_WAIT — ack received, write complete
+[375] State: READ_REQ — addr=0x4
+[395] State: WRITE_REQ — addr=0x4 data=0x22
+[405] State: WRITE_WAIT — ack received, write complete
+[415] State: READ_REQ — addr=0x7
+[435] State: WRITE_REQ — addr=0x2 data=0xdd
+[445] State: WRITE_WAIT — ack received, write complete
+[455] State: READ_REQ — addr=0x4
+[475] State: WRITE_REQ — addr=0x1 data=0x98
+[485] State: WRITE_WAIT — ack received, write complete
+[495] State: READ_REQ — addr=0x3
+[515] State: WRITE_REQ — addr=0x1 data=0x6c
+[525] State: WRITE_WAIT — ack received, write complete
+[535] State: READ_REQ — addr=0x3
+[555] State: WRITE_REQ — addr=0x4 data=0x6e
+[565] State: WRITE_WAIT — ack received, write complete
+[575] State: READ_REQ — addr=0x0
+[595] State: WRITE_REQ — addr=0x4 data=0xff
+[605] State: WRITE_WAIT — ack received, write complete
+[615] State: READ_REQ — addr=0x4
+[635] State: WRITE_REQ — addr=0x4 data=0xd0
+[645] State: WRITE_WAIT — ack received, write complete
+[655] State: READ_REQ — addr=0x3
+[675] State: WRITE_REQ — addr=0x4 data=0xea
+[685] State: WRITE_WAIT — ack received, write complete
+[695] State: READ_REQ — addr=0x6
+[715] State: WRITE_REQ — addr=0x7 data=0x98
+[725] State: WRITE_WAIT — ack received, write complete
+[735] State: READ_REQ — addr=0x3
+[755] State: WRITE_REQ — addr=0x6 data=0x19
+[765] State: WRITE_WAIT — ack received, write complete
+[775] State: READ_REQ — addr=0x0
+[795] State: WRITE_REQ — addr=0x0 data=0x87
+[805] State: WRITE_WAIT — ack received, write complete
+[815] State: READ_REQ — addr=0x1
+[835] State: WRITE_REQ — addr=0x3 data=0x5
+[845] State: WRITE_WAIT — ack received, write complete
+[855] State: READ_REQ — addr=0x6
+[875] State: WRITE_REQ — addr=0x4 data=0x30
+[885] State: WRITE_WAIT — ack received, write complete
+[895] State: READ_REQ — addr=0x7
+[915] State: WRITE_REQ — addr=0x6 data=0x70
+[925] State: WRITE_WAIT — ack received, write complete
+[935] State: READ_REQ — addr=0x7
+[955] State: WRITE_REQ — addr=0x1 data=0x71
+[965] State: WRITE_WAIT — ack received, write complete
+[975] State: READ_REQ — addr=0x5
+[995] State: WRITE_REQ — addr=0x3 data=0xfe
+[1005] State: WRITE_WAIT — ack received, write complete
+[1015] State: READ_REQ — addr=0x3
+[1035] State: WRITE_REQ — addr=0x5 data=0xdc
+[1045] State: WRITE_WAIT — ack received, write complete
+[1055] State: READ_REQ — addr=0x4
+[1075] State: WRITE_REQ — addr=0x1 data=0x2f
+[1085] State: WRITE_WAIT — ack received, write complete
+[1095] State: READ_REQ — addr=0x5
+[1115] State: WRITE_REQ — addr=0x5 data=0xfc
+[1125] State: WRITE_WAIT — ack received, write complete
+[1135] State: READ_REQ — addr=0x7
+[1155] State: WRITE_REQ — addr=0x2 data=0x28
+[1165] State: WRITE_WAIT — ack received, write complete
+[1175] State: READ_REQ — addr=0x7
+[1195] State: WRITE_REQ — addr=0x4 data=0xd5
+[1205] State: WRITE_WAIT — ack received, write complete
+[1215] State: READ_REQ — addr=0x5
+[1235] State: WRITE_REQ — addr=0x3 data=0x5c
+[1245] State: WRITE_WAIT — ack received, write complete
+[1255] State: READ_REQ — addr=0x1
+[1275] State: WRITE_REQ — addr=0x5 data=0x8f
+[1285] State: WRITE_WAIT — ack received, write complete
+[1295] State: READ_REQ — addr=0x1
+[1315] State: WRITE_REQ — addr=0x0 data=0xd4
+[1325] State: WRITE_WAIT — ack received, write complete
+[1335] State: READ_REQ — addr=0x6
+[1355] State: WRITE_REQ — addr=0x6 data=0x54
+[1365] State: WRITE_WAIT — ack received, write complete
+[1375] State: READ_REQ — addr=0x0
+[1395] State: WRITE_REQ — addr=0x7 data=0x22
+[1405] State: WRITE_WAIT — ack received, write complete
+[1415] State: READ_REQ — addr=0x0
+[1435] State: WRITE_REQ — addr=0x5 data=0x3
+[1445] State: WRITE_WAIT — ack received, write complete
+[1455] State: READ_REQ — addr=0x5
+[1475] State: WRITE_REQ — addr=0x6 data=0xdc
+[1485] State: WRITE_WAIT — ack received, write complete
+[1495] State: READ_REQ — addr=0x3
+[1515] State: WRITE_REQ — addr=0x4 data=0x44
+[1525] State: WRITE_WAIT — ack received, write complete
+[1535] State: READ_REQ — addr=0x3
+[1555] State: WRITE_REQ — addr=0x1 data=0x24
+[1565] State: WRITE_WAIT — ack received, write complete
+[1575] State: READ_REQ — addr=0x4
+[1595] State: WRITE_REQ — addr=0x3 data=0x5
+[1605] State: WRITE_WAIT — ack received, write complete
+[1615] State: READ_REQ — addr=0x2
+[1635] State: WRITE_REQ — addr=0x7 data=0x6
+[1645] State: WRITE_WAIT — ack received, write complete
+[1655] State: READ_REQ — addr=0x3
+[1675] State: WRITE_REQ — addr=0x1 data=0x80
+[1685] State: WRITE_WAIT — ack received, write complete
+[1695] State: READ_REQ — addr=0x2
+[1715] State: WRITE_REQ — addr=0x1 data=0x21
+[1725] State: WRITE_WAIT — ack received, write complete
+[1735] State: READ_REQ — addr=0x3
+[1755] State: WRITE_REQ — addr=0x0 data=0xe5
+[1765] State: WRITE_WAIT — ack received, write complete
+[1775] State: READ_REQ — addr=0x1
+[1795] State: WRITE_REQ — addr=0x4 data=0x38
+[1805] State: WRITE_WAIT — ack received, write complete
+[1815] State: READ_REQ — addr=0x7
+[1835] State: WRITE_REQ — addr=0x1 data=0xf
+[1845] State: WRITE_WAIT — ack received, write complete
+[1855] State: READ_REQ — addr=0x7
+[1875] State: WRITE_REQ — addr=0x4 data=0xd
+[1885] State: WRITE_WAIT — ack received, write complete
+[1895] State: READ_REQ — addr=0x3
+[1915] State: WRITE_REQ — addr=0x5 data=0x1a
+[1925] State: WRITE_WAIT — ack received, write complete
+[1935] State: READ_REQ — addr=0x0
+[1955] State: WRITE_REQ — addr=0x3 data=0xee
+[1965] State: WRITE_WAIT — ack received, write complete
+[1975] State: READ_REQ — addr=0x6
+[1995] State: WRITE_REQ — addr=0x5 data=0xf8
+[2005] State: WRITE_WAIT — ack received, write complete
+[2015] State: READ_REQ — addr=0x7
+[2035] State: WRITE_REQ — addr=0x3 data=0x77
+[2045] State: WRITE_WAIT — ack received, write complete
+[2055] State: READ_REQ — addr=0x2
+[2075] State: WRITE_REQ — addr=0x7 data=0x3
+[2085] State: WRITE_WAIT — ack received, write complete
+[2095] State: READ_REQ — addr=0x0
+[2115] State: WRITE_REQ — addr=0x0 data=0x27
+[2125] State: WRITE_WAIT — ack received, write complete
+[2135] State: READ_REQ — addr=0x2
+[2155] State: WRITE_REQ — addr=0x6 data=0x46
+[2165] State: WRITE_WAIT — ack received, write complete
+[2175] State: READ_REQ — addr=0x2
+[2195] State: WRITE_REQ — addr=0x6 data=0x8d
+[2205] State: WRITE_WAIT — ack received, write complete
+[2215] State: READ_REQ — addr=0x7
+[2235] State: WRITE_REQ — addr=0x2 data=0xe3
+[2245] State: WRITE_WAIT — ack received, write complete
+[2255] State: READ_REQ — addr=0x7
+[2275] State: WRITE_REQ — addr=0x4 data=0x66
+[2285] State: WRITE_WAIT — ack received, write complete
+[2295] State: READ_REQ — addr=0x1
+[2315] State: WRITE_REQ — addr=0x1 data=0x7d
+[2325] State: WRITE_WAIT — ack received, write complete
+[2335] State: READ_REQ — addr=0x3
+[2355] State: WRITE_REQ — addr=0x3 data=0xcd
+[2365] State: WRITE_WAIT — ack received, write complete
+[2375] State: READ_REQ — addr=0x7
+[2395] State: WRITE_REQ — addr=0x0 data=0x81
+[2405] State: WRITE_WAIT — ack received, write complete
+[2415] State: READ_REQ — addr=0x0
+[2435] State: WRITE_REQ — addr=0x4 data=0xba
+[2445] State: WRITE_WAIT — ack received, write complete
+[2455] State: READ_REQ — addr=0x7
+[2475] State: WRITE_REQ — addr=0x2 data=0xb
+[2485] State: WRITE_WAIT — ack received, write complete
+[2495] State: READ_REQ — addr=0x1
+[2515] State: WRITE_REQ — addr=0x6 data=0x2c
+[2525] State: WRITE_WAIT — ack received, write complete
+[2535] State: READ_REQ — addr=0x5
+[2555] State: WRITE_REQ — addr=0x6 data=0x5c
+[2565] State: WRITE_WAIT — ack received, write complete
+[2575] State: READ_REQ — addr=0x3
+[2595] State: WRITE_REQ — addr=0x0 data=0xc5
+[2605] State: WRITE_WAIT — ack received, write complete
+[2615] State: READ_REQ — addr=0x1
+[2635] State: WRITE_REQ — addr=0x6 data=0x25
+[2645] State: WRITE_WAIT — ack received, write complete
+[2655] State: READ_REQ — addr=0x1
+[2675] State: WRITE_REQ — addr=0x4 data=0x69
+[2685] State: WRITE_WAIT — ack received, write complete
+[2695] State: READ_REQ — addr=0x4
+[2715] State: WRITE_REQ — addr=0x7 data=0xfd
+[2725] State: WRITE_WAIT — ack received, write complete
+[2735] State: READ_REQ — addr=0x3
+[2755] State: WRITE_REQ — addr=0x7 data=0x1d
+[2765] State: WRITE_WAIT — ack received, write complete
+[2775] State: READ_REQ — addr=0x2
+[2795] State: WRITE_REQ — addr=0x5 data=0xa0
+[2805] State: WRITE_WAIT — ack received, write complete
+[2815] State: READ_REQ — addr=0x5
+[2835] State: WRITE_REQ — addr=0x5 data=0xf7
+[2845] State: WRITE_WAIT — ack received, write complete
+[2855] State: READ_REQ — addr=0x4
+[2875] State: WRITE_REQ — addr=0x6 data=0x1e
+[2885] State: WRITE_WAIT — ack received, write complete
+[2895] State: READ_REQ — addr=0x3
+[2915] State: WRITE_REQ — addr=0x5 data=0x28
+[2925] State: WRITE_WAIT — ack received, write complete
+[2935] State: READ_REQ — addr=0x0
+[2955] State: WRITE_REQ — addr=0x1 data=0x94
+[2965] State: WRITE_WAIT — ack received, write complete
+[2975] State: READ_REQ — addr=0x3
+[2995] State: WRITE_REQ — addr=0x1 data=0x3
+[3005] State: WRITE_WAIT — ack received, write complete
+[3015] State: READ_REQ — addr=0x7
+[3035] State: WRITE_REQ — addr=0x4 data=0x3c
+[3045] State: WRITE_WAIT — ack received, write complete
+[3055] State: READ_REQ — addr=0x0
+[3075] State: WRITE_REQ — addr=0x2 data=0xcd
+[3085] State: WRITE_WAIT — ack received, write complete
+[3095] State: READ_REQ — addr=0x2
+[3115] State: WRITE_REQ — addr=0x2 data=0xfa
+[3125] State: WRITE_WAIT — ack received, write complete
+[3135] State: READ_REQ — addr=0x2
+[3155] State: WRITE_REQ — addr=0x5 data=0xe1
+[3165] State: WRITE_WAIT — ack received, write complete
+[3175] State: READ_REQ — addr=0x0
+[3195] State: WRITE_REQ — addr=0x6 data=0xef
+[3205] State: WRITE_WAIT — ack received, write complete
+[3215] State: READ_REQ — addr=0x6
+[3235] State: WRITE_REQ — addr=0x7 data=0x71
+[3245] State: WRITE_WAIT — ack received, write complete
+[3255] State: READ_REQ — addr=0x0
+[3275] State: WRITE_REQ — addr=0x6 data=0xe0
+[3285] State: WRITE_WAIT — ack received, write complete
+[3295] State: READ_REQ — addr=0x0
+[3315] State: WRITE_REQ — addr=0x0 data=0xce
+[3325] State: WRITE_WAIT — ack received, write complete
+[3335] State: READ_REQ — addr=0x1
+[3355] State: WRITE_REQ — addr=0x0 data=0x31
+[3365] State: WRITE_WAIT — ack received, write complete
+[3375] State: READ_REQ — addr=0x1
+[3395] State: WRITE_REQ — addr=0x4 data=0x33
+[3405] State: WRITE_WAIT — ack received, write complete
+[3415] State: READ_REQ — addr=0x6
+[3435] State: WRITE_REQ — addr=0x0 data=0xa
+[3445] State: WRITE_WAIT — ack received, write complete
+[3455] State: READ_REQ — addr=0x3
+[3475] State: WRITE_REQ — addr=0x3 data=0xba
+[3485] State: WRITE_WAIT — ack received, write complete
+[3495] State: READ_REQ — addr=0x4
+[3515] State: WRITE_REQ — addr=0x2 data=0x42
+[3525] State: WRITE_WAIT — ack received, write complete
+[3535] State: READ_REQ — addr=0x6
+[3555] State: WRITE_REQ — addr=0x7 data=0x46
+[3565] State: WRITE_WAIT — ack received, write complete
+[3575] State: READ_REQ — addr=0x4
+[3595] State: WRITE_REQ — addr=0x5 data=0x8f
+[3605] State: WRITE_WAIT — ack received, write complete
+[3615] State: READ_REQ — addr=0x0
+[3635] State: WRITE_REQ — addr=0x5 data=0x30
+[3645] State: WRITE_WAIT — ack received, write complete
+[3655] State: READ_REQ — addr=0x3
+[3675] State: WRITE_REQ — addr=0x0 data=0x9
+[3685] State: WRITE_WAIT — ack received, write complete
+[3695] State: READ_REQ — addr=0x1
+[3715] State: WRITE_REQ — addr=0x4 data=0x42
+[3725] State: WRITE_WAIT — ack received, write complete
+[3735] State: READ_REQ — addr=0x7
+[3755] State: WRITE_REQ — addr=0x5 data=0xe6
+[3765] State: WRITE_WAIT — ack received, write complete
+[3775] State: READ_REQ — addr=0x2
+[3795] State: WRITE_REQ — addr=0x3 data=0xab
+[3805] State: WRITE_WAIT — ack received, write complete
+[3815] State: READ_REQ — addr=0x1
+[3835] State: WRITE_REQ — addr=0x4 data=0x8d
+[3845] State: WRITE_WAIT — ack received, write complete
+[3855] State: READ_REQ — addr=0x0
+[3875] State: WRITE_REQ — addr=0x1 data=0x85
+[3885] State: WRITE_WAIT — ack received, write complete
+[3895] State: READ_REQ — addr=0x0
+[3915] State: WRITE_REQ — addr=0x5 data=0xdd
+[3925] State: WRITE_WAIT — ack received, write complete
+[3935] State: READ_REQ — addr=0x1
+[3955] State: WRITE_REQ — addr=0x6 data=0x95
+[3965] State: WRITE_WAIT — ack received, write complete
+[3975] State: READ_REQ — addr=0x3
+[3995] State: WRITE_REQ — addr=0x1 data=0xb4
+[4005] State: WRITE_WAIT — ack received, write complete
+[4015] State: READ_REQ — addr=0x1
+[4035] State: WRITE_REQ — addr=0x4 data=0x71
+[4045] State: WRITE_WAIT — ack received, write complete
+[4055] State: READ_REQ — addr=0x1
+[4075] State: WRITE_REQ — addr=0x3 data=0x37
+[4085] State: WRITE_WAIT — ack received, write complete
+[4095] State: READ_REQ — addr=0x0
+[4115] State: WRITE_REQ — addr=0x6 data=0xa1
+[4125] State: WRITE_WAIT — ack received, write complete
+[4135] State: READ_REQ — addr=0x7
+[4155] State: WRITE_REQ — addr=0x4 data=0x3b
+[4165] State: WRITE_WAIT — ack received, write complete
+[4175] State: READ_REQ — addr=0x5
+[4195] State: WRITE_REQ — addr=0x4 data=0x6d
+[4205] State: WRITE_WAIT — ack received, write complete
+[4215] State: READ_REQ — addr=0x7
+[4235] State: WRITE_REQ — addr=0x6 data=0x92
+[4245] State: WRITE_WAIT — ack received, write complete
+[4255] State: READ_REQ — addr=0x5
+[4275] State: WRITE_REQ — addr=0x4 data=0xd8
+[4285] State: WRITE_WAIT — ack received, write complete
+[4295] State: READ_REQ — addr=0x4
+[4315] State: WRITE_REQ — addr=0x5 data=0x84
+[4325] State: WRITE_WAIT — ack received, write complete
+[4335] State: READ_REQ — addr=0x0
+[4355] State: WRITE_REQ — addr=0x1 data=0x4c
+[4365] State: WRITE_WAIT — ack received, write complete
+[4375] State: READ_REQ — addr=0x5
+[4395] State: WRITE_REQ — addr=0x4 data=0xe8
+[4405] State: WRITE_WAIT — ack received, write complete
+[4415] State: READ_REQ — addr=0x6
+[4435] State: WRITE_REQ — addr=0x0 data=0x47
+[4445] State: WRITE_WAIT — ack received, write complete
+[4455] State: READ_REQ — addr=0x0
+[4475] State: WRITE_REQ — addr=0x5 data=0x0
+[4485] State: WRITE_WAIT — ack received, write complete
+[4495] State: READ_REQ — addr=0x3
+[4515] State: WRITE_REQ — addr=0x3 data=0x7b
+[4525] State: WRITE_WAIT — ack received, write complete
+[4535] State: READ_REQ — addr=0x3
+[4555] State: WRITE_REQ — addr=0x6 data=0x14
+[4565] State: WRITE_WAIT — ack received, write complete
+[4575] State: READ_REQ — addr=0x7
+[4595] State: WRITE_REQ — addr=0x3 data=0xbc
+[4605] State: WRITE_WAIT — ack received, write complete
+[4615] State: READ_REQ — addr=0x6
+[4635] State: WRITE_REQ — addr=0x4 data=0x76
+[4645] State: WRITE_WAIT — ack received, write complete
+[4655] State: READ_REQ — addr=0x3
+[4675] State: WRITE_REQ — addr=0x1 data=0x8b
+[4685] State: WRITE_WAIT — ack received, write complete
+[4695] State: READ_REQ — addr=0x2
+[4715] State: WRITE_REQ — addr=0x3 data=0x61
+[4725] State: WRITE_WAIT — ack received, write complete
+[4735] State: READ_REQ — addr=0x3
+[4755] State: WRITE_REQ — addr=0x2 data=0x75
+[4765] State: WRITE_WAIT — ack received, write complete
+[4775] State: READ_REQ — addr=0x0
+[4795] State: WRITE_REQ — addr=0x7 data=0xc1
+[4805] State: WRITE_WAIT — ack received, write complete
+[4815] State: READ_REQ — addr=0x7
+[4835] State: WRITE_REQ — addr=0x4 data=0x92
+[4845] State: WRITE_WAIT — ack received, write complete
+[4855] State: READ_REQ — addr=0x2
+[4875] State: WRITE_REQ — addr=0x0 data=0x80
+[4885] State: WRITE_WAIT — ack received, write complete
+[4895] State: READ_REQ — addr=0x4
+[4915] State: WRITE_REQ — addr=0x3 data=0x7c
+[4925] State: WRITE_WAIT — ack received, write complete
+[4935] State: READ_REQ — addr=0x0
+[4955] State: WRITE_REQ — addr=0x6 data=0xba
+[4965] State: WRITE_WAIT — ack received, write complete
+[4975] State: READ_REQ — addr=0x5
+[4995] State: WRITE_REQ — addr=0x2 data=0x35
+[5005] State: WRITE_WAIT — ack received, write complete
+[5015] State: READ_REQ — addr=0x0
+[5035] State: WRITE_REQ — addr=0x7 data=0xaf
+[5045] State: WRITE_WAIT — ack received, write complete
+[5055] State: READ_REQ — addr=0x3
+[5075] State: WRITE_REQ — addr=0x7 data=0xc1
+[5085] State: WRITE_WAIT — ack received, write complete
+[5095] State: READ_REQ — addr=0x6
+[5115] State: WRITE_REQ — addr=0x5 data=0x7c
+[5125] State: WRITE_WAIT — ack received, write complete
+[5135] State: READ_REQ — addr=0x6
+[5155] State: WRITE_REQ — addr=0x5 data=0xc0
+[5165] State: WRITE_WAIT — ack received, write complete
+[5175] State: READ_REQ — addr=0x2
+[5195] State: WRITE_REQ — addr=0x5 data=0xb6
+[5205] State: WRITE_WAIT — ack received, write complete
+[5215] State: READ_REQ — addr=0x2
+[5235] State: WRITE_REQ — addr=0x7 data=0x24
+[5245] State: WRITE_WAIT — ack received, write complete
+[5255] State: READ_REQ — addr=0x1
+[5275] State: WRITE_REQ — addr=0x4 data=0x9b
+[5285] State: WRITE_WAIT — ack received, write complete
+[5295] State: READ_REQ — addr=0x5
+[5315] State: WRITE_REQ — addr=0x4 data=0x41
+[5325] State: WRITE_WAIT — ack received, write complete
+[5335] State: READ_REQ — addr=0x0
+[5355] State: WRITE_REQ — addr=0x0 data=0x87
+[5365] State: WRITE_WAIT — ack received, write complete
+[5375] State: READ_REQ — addr=0x1
+[5395] State: WRITE_REQ — addr=0x4 data=0xe6
+[5405] State: WRITE_WAIT — ack received, write complete
+[5415] State: READ_REQ — addr=0x6
+[5435] State: WRITE_REQ — addr=0x7 data=0x29
+[5445] State: WRITE_WAIT — ack received, write complete
+[5455] State: READ_REQ — addr=0x7
+[5475] State: WRITE_REQ — addr=0x2 data=0x82
+[5485] State: WRITE_WAIT — ack received, write complete
+[5495] State: READ_REQ — addr=0x7
+[5515] State: WRITE_REQ — addr=0x7 data=0x21
+[5525] State: WRITE_WAIT — ack received, write complete
+[5535] State: READ_REQ — addr=0x0
+[5555] State: WRITE_REQ — addr=0x0 data=0xe9
+[5565] State: WRITE_WAIT — ack received, write complete
+[5575] State: READ_REQ — addr=0x6
+[5595] State: WRITE_REQ — addr=0x6 data=0x17
+[5605] State: WRITE_WAIT — ack received, write complete
+[5615] State: READ_REQ — addr=0x7
+[5635] State: WRITE_REQ — addr=0x5 data=0xc
+[5645] State: WRITE_WAIT — ack received, write complete
+[5655] State: READ_REQ — addr=0x7
+[5675] State: WRITE_REQ — addr=0x3 data=0xf1
+[5685] State: WRITE_WAIT — ack received, write complete
+[5695] State: READ_REQ — addr=0x6
+[5715] State: WRITE_REQ — addr=0x1 data=0x1
+[5725] State: WRITE_WAIT — ack received, write complete
+[5735] State: READ_REQ — addr=0x1
+[5755] State: WRITE_REQ — addr=0x3 data=0x59
+[5765] State: WRITE_WAIT — ack received, write complete
+[5775] State: READ_REQ — addr=0x4
+[5795] State: WRITE_REQ — addr=0x3 data=0x6d
+[5805] State: WRITE_WAIT — ack received, write complete
+[5815] State: READ_REQ — addr=0x2
+[5835] State: WRITE_REQ — addr=0x5 data=0x5c
+[5845] State: WRITE_WAIT — ack received, write complete
+[5855] State: READ_REQ — addr=0x5
+[5875] State: WRITE_REQ — addr=0x4 data=0xac
+[5885] State: WRITE_WAIT — ack received, write complete
+[5895] State: READ_REQ — addr=0x6
+[5915] State: WRITE_REQ — addr=0x7 data=0x9e
+[5925] State: WRITE_WAIT — ack received, write complete
+[5935] State: READ_REQ — addr=0x5
+[5955] State: WRITE_REQ — addr=0x7 data=0xc6
+[5965] State: WRITE_WAIT — ack received, write complete
+[5975] State: READ_REQ — addr=0x0
+[5995] State: WRITE_REQ — addr=0x2 data=0x8c
+[6005] State: WRITE_WAIT — ack received, write complete
+[6015] State: READ_REQ — addr=0x4
+[6035] State: WRITE_REQ — addr=0x7 data=0x0
+[6045] State: WRITE_WAIT — ack received, write complete
+[6055] State: READ_REQ — addr=0x7
+[6075] State: WRITE_REQ — addr=0x5 data=0x8b
+[6085] State: WRITE_WAIT — ack received, write complete
+[6095] State: READ_REQ — addr=0x4
+[6115] State: WRITE_REQ — addr=0x6 data=0xb5
+[6125] State: WRITE_WAIT — ack received, write complete
+[6135] State: READ_REQ — addr=0x0
+[6155] State: WRITE_REQ — addr=0x4 data=0xc3
+[6165] State: WRITE_WAIT — ack received, write complete
+[6175] State: READ_REQ — addr=0x4
+[6195] State: WRITE_REQ — addr=0x2 data=0x2
+[6205] State: WRITE_WAIT — ack received, write complete
+[6215] State: READ_REQ — addr=0x3
+[6235] State: WRITE_REQ — addr=0x2 data=0x96
+[6245] State: WRITE_WAIT — ack received, write complete
+[6255] State: READ_REQ — addr=0x7
+[6275] State: WRITE_REQ — addr=0x5 data=0xc8
+[6285] State: WRITE_WAIT — ack received, write complete
+[6295] State: READ_REQ — addr=0x2
+[6315] State: WRITE_REQ — addr=0x5 data=0xa1
+[6325] State: WRITE_WAIT — ack received, write complete
+[6335] State: READ_REQ — addr=0x7
+[6355] State: WRITE_REQ — addr=0x6 data=0xff
+[6365] State: WRITE_WAIT — ack received, write complete
+[6375] State: READ_REQ — addr=0x1
+[6395] State: WRITE_REQ — addr=0x3 data=0xa
+[6405] State: WRITE_WAIT — ack received, write complete
+[6415] State: READ_REQ — addr=0x6
+[6435] State: WRITE_REQ — addr=0x3 data=0x81
+[6445] State: WRITE_WAIT — ack received, write complete
+[6455] State: READ_REQ — addr=0x1
+[6475] State: WRITE_REQ — addr=0x6 data=0x86
+[6485] State: WRITE_WAIT — ack received, write complete
+[6495] State: READ_REQ — addr=0x0
+[6515] State: WRITE_REQ — addr=0x7 data=0xa6
+[6525] State: WRITE_WAIT — ack received, write complete
+[6535] State: READ_REQ — addr=0x0
+[6555] State: WRITE_REQ — addr=0x2 data=0xa4
+[6565] State: WRITE_WAIT — ack received, write complete
+[6575] State: READ_REQ — addr=0x4
+[6595] State: WRITE_REQ — addr=0x7 data=0xe7
+[6605] State: WRITE_WAIT — ack received, write complete
+[6615] State: READ_REQ — addr=0x7
+[6635] State: WRITE_REQ — addr=0x4 data=0x14
+[6645] State: WRITE_WAIT — ack received, write complete
+[6655] State: READ_REQ — addr=0x0
+[6675] State: WRITE_REQ — addr=0x7 data=0x3f
+[6685] State: WRITE_WAIT — ack received, write complete
+[6695] State: READ_REQ — addr=0x0
+[6715] State: WRITE_REQ — addr=0x6 data=0xc1
+[6725] State: WRITE_WAIT — ack received, write complete
+[6735] State: READ_REQ — addr=0x7
+[6755] State: WRITE_REQ — addr=0x6 data=0x10
+[6765] State: WRITE_WAIT — ack received, write complete
+[6775] State: READ_REQ — addr=0x4
+[6795] State: WRITE_REQ — addr=0x3 data=0x38
+[6805] State: WRITE_WAIT — ack received, write complete
+[6815] State: READ_REQ — addr=0x1
+[6835] State: WRITE_REQ — addr=0x3 data=0x9e
+[6845] State: WRITE_WAIT — ack received, write complete
+[6855] State: READ_REQ — addr=0x3
+[6875] State: WRITE_REQ — addr=0x7 data=0x73
+[6885] State: WRITE_WAIT — ack received, write complete
+[6895] State: READ_REQ — addr=0x3
+[6915] State: WRITE_REQ — addr=0x3 data=0x92
+[6925] State: WRITE_WAIT — ack received, write complete
+[6935] State: READ_REQ — addr=0x3
+[6955] State: WRITE_REQ — addr=0x0 data=0xc6
+[6965] State: WRITE_WAIT — ack received, write complete
+[6975] State: READ_REQ — addr=0x3
+[6995] State: WRITE_REQ — addr=0x4 data=0x18
+[7005] State: WRITE_WAIT — ack received, write complete
+[7015] State: READ_REQ — addr=0x4
+[7035] State: WRITE_REQ — addr=0x3 data=0xd9
+[7045] State: WRITE_WAIT — ack received, write complete
+[7055] State: READ_REQ — addr=0x3
+[7075] State: WRITE_REQ — addr=0x3 data=0xae
+[7085] State: WRITE_WAIT — ack received, write complete
+[7095] State: READ_REQ — addr=0x5
+[7115] State: WRITE_REQ — addr=0x0 data=0xa4
+[7125] State: WRITE_WAIT — ack received, write complete
+[7135] State: READ_REQ — addr=0x7
+[7155] State: WRITE_REQ — addr=0x3 data=0x2b
+[7165] State: WRITE_WAIT — ack received, write complete
+[7175] State: READ_REQ — addr=0x1
+[7195] State: WRITE_REQ — addr=0x3 data=0x4d
+[7205] State: WRITE_WAIT — ack received, write complete
+[7215] State: READ_REQ — addr=0x3
+[7235] State: WRITE_REQ — addr=0x3 data=0xc9
+[7245] State: WRITE_WAIT — ack received, write complete
+[7255] State: READ_REQ — addr=0x1
+[7275] State: WRITE_REQ — addr=0x0 data=0xb1
+[7285] State: WRITE_WAIT — ack received, write complete
+[7295] State: READ_REQ — addr=0x0
+[7315] State: WRITE_REQ — addr=0x7 data=0x2b
+[7325] State: WRITE_WAIT — ack received, write complete
+[7335] State: READ_REQ — addr=0x2
+[7355] State: WRITE_REQ — addr=0x5 data=0x28
+[7365] State: WRITE_WAIT — ack received, write complete
+[7375] State: READ_REQ — addr=0x3
+[7395] State: WRITE_REQ — addr=0x1 data=0xd1
+[7405] State: WRITE_WAIT — ack received, write complete
+[7415] State: READ_REQ — addr=0x0
+[7435] State: WRITE_REQ — addr=0x6 data=0x8b
+[7445] State: WRITE_WAIT — ack received, write complete
+[7455] State: READ_REQ — addr=0x1
+[7475] State: WRITE_REQ — addr=0x1 data=0x84
+[7485] State: WRITE_WAIT — ack received, write complete
+[7495] State: READ_REQ — addr=0x4
+[7515] State: WRITE_REQ — addr=0x3 data=0x4f
+[7525] State: WRITE_WAIT — ack received, write complete
+[7535] State: READ_REQ — addr=0x1
+[7555] State: WRITE_REQ — addr=0x5 data=0xfe
+[7565] State: WRITE_WAIT — ack received, write complete
+[7575] State: READ_REQ — addr=0x1
+[7595] State: WRITE_REQ — addr=0x4 data=0xdf
+[7605] State: WRITE_WAIT — ack received, write complete
+[7615] State: READ_REQ — addr=0x7
+[7635] State: WRITE_REQ — addr=0x5 data=0x40
+[7645] State: WRITE_WAIT — ack received, write complete
+[7655] State: READ_REQ — addr=0x4
+[7675] State: WRITE_REQ — addr=0x3 data=0x2d
+[7685] State: WRITE_WAIT — ack received, write complete
+[7695] State: READ_REQ — addr=0x7
+[7715] State: WRITE_REQ — addr=0x0 data=0x2e
+[7725] State: WRITE_WAIT — ack received, write complete
+[7735] State: READ_REQ — addr=0x1
+[7755] State: WRITE_REQ — addr=0x7 data=0x8f
+[7765] State: WRITE_WAIT — ack received, write complete
+[7775] State: READ_REQ — addr=0x0
+[7795] State: WRITE_REQ — addr=0x0 data=0x69
+[7805] State: WRITE_WAIT — ack received, write complete
+[7815] State: READ_REQ — addr=0x0
+[7835] State: WRITE_REQ — addr=0x7 data=0x29
+[7845] State: WRITE_WAIT — ack received, write complete
+[7855] State: READ_REQ — addr=0x0
+[7875] State: WRITE_REQ — addr=0x7 data=0x22
+[7885] State: WRITE_WAIT — ack received, write complete
+[7895] State: READ_REQ — addr=0x4
+[7915] State: WRITE_REQ — addr=0x3 data=0x5
+[7925] State: WRITE_WAIT — ack received, write complete
+[7935] State: READ_REQ — addr=0x5
+[7955] State: WRITE_REQ — addr=0x5 data=0xa0
+[7965] State: WRITE_WAIT — ack received, write complete
+[7975] State: READ_REQ — addr=0x3
+[7995] State: WRITE_REQ — addr=0x4 data=0xa6
+[8005] State: WRITE_WAIT — ack received, write complete
+[8015] State: READ_REQ — addr=0x0
+[8035] State: WRITE_REQ — addr=0x5 data=0x6
+[8045] State: WRITE_WAIT — ack received, write complete
+[8055] State: READ_REQ — addr=0x5
+[8075] State: WRITE_REQ — addr=0x1 data=0xbd
+[8085] State: WRITE_WAIT — ack received, write complete
+[8095] State: READ_REQ — addr=0x2
+[8115] State: WRITE_REQ — addr=0x7 data=0x55
+[8125] State: WRITE_WAIT — ack received, write complete
+[8135] State: READ_REQ — addr=0x3
+[8155] State: WRITE_REQ — addr=0x2 data=0xe2
+[8165] State: WRITE_WAIT — ack received, write complete
+[8175] State: READ_REQ — addr=0x7
+[8195] State: WRITE_REQ — addr=0x5 data=0x45
+[8205] State: WRITE_WAIT — ack received, write complete
+[8215] State: READ_REQ — addr=0x7
+[8235] State: WRITE_REQ — addr=0x4 data=0x1
+[8245] State: WRITE_WAIT — ack received, write complete
+[8255] State: READ_REQ — addr=0x3
+[8275] State: WRITE_REQ — addr=0x1 data=0x18
+[8285] State: WRITE_WAIT — ack received, write complete
+[8295] State: READ_REQ — addr=0x0
+[8315] State: WRITE_REQ — addr=0x0 data=0xb3
+[8325] State: WRITE_WAIT — ack received, write complete
+[8335] State: READ_REQ — addr=0x7
+[8355] State: WRITE_REQ — addr=0x7 data=0xc0
+[8365] State: WRITE_WAIT — ack received, write complete
+[8375] State: READ_REQ — addr=0x0
+[8395] State: WRITE_REQ — addr=0x5 data=0x3e
+[8405] State: WRITE_WAIT — ack received, write complete
+[8415] State: READ_REQ — addr=0x5
+[8435] State: WRITE_REQ — addr=0x7 data=0xe7
+[8445] State: WRITE_WAIT — ack received, write complete
+[8455] State: READ_REQ — addr=0x4
+[8475] State: WRITE_REQ — addr=0x6 data=0xf5
+[8485] State: WRITE_WAIT — ack received, write complete
+[8495] State: READ_REQ — addr=0x7
+[8515] State: WRITE_REQ — addr=0x1 data=0x79
+[8525] State: WRITE_WAIT — ack received, write complete
+[8535] State: READ_REQ — addr=0x3
+[8555] State: WRITE_REQ — addr=0x7 data=0xd0
+[8565] State: WRITE_WAIT — ack received, write complete
+[8575] State: READ_REQ — addr=0x4
+[8595] State: WRITE_REQ — addr=0x2 data=0x62
+[8605] State: WRITE_WAIT — ack received, write complete
+[8615] State: READ_REQ — addr=0x0
+[8635] State: WRITE_REQ — addr=0x0 data=0x7a
+[8645] State: WRITE_WAIT — ack received, write complete
+[8655] State: READ_REQ — addr=0x0
+[8675] State: WRITE_REQ — addr=0x3 data=0xd
+[8685] State: WRITE_WAIT — ack received, write complete
+[8695] State: READ_REQ — addr=0x0
+[8715] State: WRITE_REQ — addr=0x2 data=0xcc
+[8725] State: WRITE_WAIT — ack received, write complete
+[8735] State: READ_REQ — addr=0x7
+[8755] State: WRITE_REQ — addr=0x6 data=0xb5
+[8765] State: WRITE_WAIT — ack received, write complete
+[8775] State: READ_REQ — addr=0x4
+[8795] State: WRITE_REQ — addr=0x3 data=0xe6
+[8805] State: WRITE_WAIT — ack received, write complete
+[8815] State: READ_REQ — addr=0x1
+[8835] State: WRITE_REQ — addr=0x4 data=0x7f
+[8845] State: WRITE_WAIT — ack received, write complete
+[8855] State: READ_REQ — addr=0x4
+[8875] State: WRITE_REQ — addr=0x0 data=0xfa
+[8885] State: WRITE_WAIT — ack received, write complete
+[8895] State: READ_REQ — addr=0x6
+[8915] State: WRITE_REQ — addr=0x4 data=0xed
+[8925] State: WRITE_WAIT — ack received, write complete
+[8935] State: READ_REQ — addr=0x3
+[8955] State: WRITE_REQ — addr=0x0 data=0x92
+[8965] State: WRITE_WAIT — ack received, write complete
+[8975] State: READ_REQ — addr=0x6
+[8995] State: WRITE_REQ — addr=0x5 data=0x2b
+[9005] State: WRITE_WAIT — ack received, write complete
+[9015] State: READ_REQ — addr=0x0
+[9035] State: WRITE_REQ — addr=0x4 data=0x1e
+[9045] State: WRITE_WAIT — ack received, write complete
+[9055] State: READ_REQ — addr=0x6
+[9075] State: WRITE_REQ — addr=0x5 data=0x23
+[9085] State: WRITE_WAIT — ack received, write complete
+[9095] State: READ_REQ — addr=0x2
+[9115] State: WRITE_REQ — addr=0x1 data=0xfb
+[9125] State: WRITE_WAIT — ack received, write complete
+[9135] State: READ_REQ — addr=0x6
+[9155] State: WRITE_REQ — addr=0x5 data=0xe6
+[9165] State: WRITE_WAIT — ack received, write complete
+[9175] State: READ_REQ — addr=0x2
+[9195] State: WRITE_REQ — addr=0x6 data=0xe5
+[9205] State: WRITE_WAIT — ack received, write complete
+[9215] State: READ_REQ — addr=0x2
+[9235] State: WRITE_REQ — addr=0x6 data=0x97
+[9245] State: WRITE_WAIT — ack received, write complete
+[9255] State: READ_REQ — addr=0x3
+[9275] State: WRITE_REQ — addr=0x3 data=0x46
+[9285] State: WRITE_WAIT — ack received, write complete
+[9295] State: READ_REQ — addr=0x0
+[9315] State: WRITE_REQ — addr=0x1 data=0xfc
+[9325] State: WRITE_WAIT — ack received, write complete
+[9335] State: READ_REQ — addr=0x6
+[9355] State: WRITE_REQ — addr=0x6 data=0x5a
+[9365] State: WRITE_WAIT — ack received, write complete
+[9375] State: READ_REQ — addr=0x2
+[9395] State: WRITE_REQ — addr=0x1 data=0xc3
+[9405] State: WRITE_WAIT — ack received, write complete
+[9415] State: READ_REQ — addr=0x6
+[9435] State: WRITE_REQ — addr=0x6 data=0x29
+[9445] State: WRITE_WAIT — ack received, write complete
+[9455] State: READ_REQ — addr=0x7
+[9475] State: WRITE_REQ — addr=0x1 data=0x5d
+[9485] State: WRITE_WAIT — ack received, write complete
+[9495] State: READ_REQ — addr=0x3
+[9515] State: WRITE_REQ — addr=0x0 data=0x2b
+[9525] State: WRITE_WAIT — ack received, write complete
+[9535] State: READ_REQ — addr=0x1
+[9555] State: WRITE_REQ — addr=0x6 data=0x69
+[9565] State: WRITE_WAIT — ack received, write complete
+[9575] State: READ_REQ — addr=0x4
+[9595] State: WRITE_REQ — addr=0x3 data=0x4a
+[9605] State: WRITE_WAIT — ack received, write complete
+[9615] State: READ_REQ — addr=0x7
+[9635] State: WRITE_REQ — addr=0x5 data=0x4a
+[9645] State: WRITE_WAIT — ack received, write complete
+[9655] State: READ_REQ — addr=0x0
+[9675] State: WRITE_REQ — addr=0x1 data=0x63
+[9685] State: WRITE_WAIT — ack received, write complete
+[9695] State: READ_REQ — addr=0x0
+[9715] State: WRITE_REQ — addr=0x2 data=0xae
+[9725] State: WRITE_WAIT — ack received, write complete
+[9735] State: READ_REQ — addr=0x0
+[9755] State: WRITE_REQ — addr=0x2 data=0x2d
+[9765] State: WRITE_WAIT — ack received, write complete
+[9775] State: READ_REQ — addr=0x2
+[9795] State: WRITE_REQ — addr=0x5 data=0x82
+[9805] State: WRITE_WAIT — ack received, write complete
+[9815] State: READ_REQ — addr=0x6
+[9835] State: WRITE_REQ — addr=0x4 data=0xfe
+[9845] State: WRITE_WAIT — ack received, write complete
+[9855] State: READ_REQ — addr=0x6
+[9875] State: WRITE_REQ — addr=0x5 data=0xf9
+[9885] State: WRITE_WAIT — ack received, write complete
+[9895] State: READ_REQ — addr=0x7
+[9915] State: WRITE_REQ — addr=0x0 data=0x8
+[9925] State: WRITE_WAIT — ack received, write complete
+[9935] State: READ_REQ — addr=0x7
+[9955] State: WRITE_REQ — addr=0x7 data=0x6f
+[9965] State: WRITE_WAIT — ack received, write complete
+[9975] State: READ_REQ — addr=0x4
+[9995] State: WRITE_REQ — addr=0x7 data=0xe3
+[10005] State: WRITE_WAIT — ack received, write complete
+[10015] State: READ_REQ — addr=0x7
+[10035] State: WRITE_REQ — addr=0x6 data=0xd
+[10045] State: WRITE_WAIT — ack received, write complete
+[10055] State: READ_REQ — addr=0x6
+[10075] State: WRITE_REQ — addr=0x5 data=0x42
+[10085] State: WRITE_WAIT — ack received, write complete
+[10095] State: READ_REQ — addr=0x1
+[10115] State: WRITE_REQ — addr=0x4 data=0x2c
+[10125] State: WRITE_WAIT — ack received, write complete
+[10135] State: READ_REQ — addr=0x6
+[10155] State: WRITE_REQ — addr=0x5 data=0x69
+[10165] State: WRITE_WAIT — ack received, write complete
+[10175] State: READ_REQ — addr=0x1
+[10195] State: WRITE_REQ — addr=0x7 data=0xa
+[10205] State: WRITE_WAIT — ack received, write complete
+[10215] State: READ_REQ — addr=0x0
+[10235] State: WRITE_REQ — addr=0x7 data=0xfe
+[10245] State: WRITE_WAIT — ack received, write complete
+[10255] State: READ_REQ — addr=0x6
+[10275] State: WRITE_REQ — addr=0x7 data=0x44
+[10285] State: WRITE_WAIT — ack received, write complete
+[10295] State: READ_REQ — addr=0x0
+[10315] State: WRITE_REQ — addr=0x2 data=0x12
+[10325] State: WRITE_WAIT — ack received, write complete
+[10335] State: READ_REQ — addr=0x3
+[10355] State: WRITE_REQ — addr=0x5 data=0x6d
+[10365] State: WRITE_WAIT — ack received, write complete
+[10375] State: READ_REQ — addr=0x2
+[10395] State: WRITE_REQ — addr=0x0 data=0x22
+[10405] State: WRITE_WAIT — ack received, write complete
+[10415] State: READ_REQ — addr=0x4
+[10435] State: WRITE_REQ — addr=0x1 data=0xe2
+[10445] State: WRITE_WAIT — ack received, write complete
+[10455] State: READ_REQ — addr=0x7
+[10475] State: WRITE_REQ — addr=0x5 data=0x87
+[10485] State: WRITE_WAIT — ack received, write complete
+[10495] State: READ_REQ — addr=0x6
+[10515] State: WRITE_REQ — addr=0x1 data=0xb2
+[10525] State: WRITE_WAIT — ack received, write complete
+[10535] State: READ_REQ — addr=0x5
+[10555] State: WRITE_REQ — addr=0x2 data=0x7c
+[10565] State: WRITE_WAIT — ack received, write complete
+[10575] State: READ_REQ — addr=0x7
+[10595] State: WRITE_REQ — addr=0x3 data=0x1f
+[10605] State: WRITE_WAIT — ack received, write complete
+[10615] State: READ_REQ — addr=0x3
+[10635] State: WRITE_REQ — addr=0x5 data=0xfe
+[10645] State: WRITE_WAIT — ack received, write complete
+[10655] State: READ_REQ — addr=0x0
+[10675] State: WRITE_REQ — addr=0x6 data=0x24
+[10685] State: WRITE_WAIT — ack received, write complete
+[10695] State: READ_REQ — addr=0x1
+[10715] State: WRITE_REQ — addr=0x5 data=0xdf
+[10725] State: WRITE_WAIT — ack received, write complete
+[10735] State: READ_REQ — addr=0x5
+[10755] State: WRITE_REQ — addr=0x0 data=0xc7
+[10765] State: WRITE_WAIT — ack received, write complete
+[10775] State: READ_REQ — addr=0x4
+[10795] State: WRITE_REQ — addr=0x7 data=0xda
+[10805] State: WRITE_WAIT — ack received, write complete
+[10815] State: READ_REQ — addr=0x0
+[10835] State: WRITE_REQ — addr=0x0 data=0x71
+[10845] State: WRITE_WAIT — ack received, write complete
+[10855] State: READ_REQ — addr=0x6
+[10875] State: WRITE_REQ — addr=0x2 data=0x27
+[10885] State: WRITE_WAIT — ack received, write complete
+[10895] State: READ_REQ — addr=0x0
+[10915] State: WRITE_REQ — addr=0x1 data=0xe3
+[10925] State: WRITE_WAIT — ack received, write complete
+[10935] State: READ_REQ — addr=0x4
+[10955] State: WRITE_REQ — addr=0x0 data=0x66
+[10965] State: WRITE_WAIT — ack received, write complete
+[10975] State: READ_REQ — addr=0x6
+[10995] State: WRITE_REQ — addr=0x3 data=0x78
+[11005] State: WRITE_WAIT — ack received, write complete
+[11015] State: READ_REQ — addr=0x2
+[11035] State: WRITE_REQ — addr=0x2 data=0x7
+[11045] State: WRITE_WAIT — ack received, write complete
+[11055] State: READ_REQ — addr=0x1
+[11075] State: WRITE_REQ — addr=0x2 data=0xdd
+[11085] State: WRITE_WAIT — ack received, write complete
+[11095] State: READ_REQ — addr=0x1
+[11115] State: WRITE_REQ — addr=0x3 data=0xde
+[11125] State: WRITE_WAIT — ack received, write complete
+[11135] State: READ_REQ — addr=0x5
+[11155] State: WRITE_REQ — addr=0x4 data=0xc2
+[11165] State: WRITE_WAIT — ack received, write complete
+[11175] State: READ_REQ — addr=0x5
+[11195] State: WRITE_REQ — addr=0x0 data=0xea
+[11205] State: WRITE_WAIT — ack received, write complete
+[11215] State: READ_REQ — addr=0x5
+[11235] State: WRITE_REQ — addr=0x3 data=0xec
+[11245] State: WRITE_WAIT — ack received, write complete
+[11255] State: READ_REQ — addr=0x6
+[11275] State: WRITE_REQ — addr=0x0 data=0x63
+[11285] State: WRITE_WAIT — ack received, write complete
+[11295] State: READ_REQ — addr=0x5
+[11315] State: WRITE_REQ — addr=0x0 data=0xa2
+[11325] State: WRITE_WAIT — ack received, write complete
+[11335] State: READ_REQ — addr=0x6
+[11355] State: WRITE_REQ — addr=0x7 data=0x5a
+[11365] State: WRITE_WAIT — ack received, write complete
+[11375] State: READ_REQ — addr=0x5
+[11395] State: WRITE_REQ — addr=0x3 data=0xe4
+[11405] State: WRITE_WAIT — ack received, write complete
+[11415] State: READ_REQ — addr=0x4
+[11435] State: WRITE_REQ — addr=0x3 data=0xd2
+[11445] State: WRITE_WAIT — ack received, write complete
+[11455] State: READ_REQ — addr=0x6
+[11475] State: WRITE_REQ — addr=0x5 data=0x41
+[11485] State: WRITE_WAIT — ack received, write complete
+[11495] State: READ_REQ — addr=0x1
+[11515] State: WRITE_REQ — addr=0x2 data=0x9f
+[11525] State: WRITE_WAIT — ack received, write complete
+[11535] State: READ_REQ — addr=0x6
+[11555] State: WRITE_REQ — addr=0x1 data=0x82
+[11565] State: WRITE_WAIT — ack received, write complete
+[11575] State: READ_REQ — addr=0x4
+[11595] State: WRITE_REQ — addr=0x4 data=0xf2
+[11605] State: WRITE_WAIT — ack received, write complete
+[11615] State: READ_REQ — addr=0x1
+[11635] State: WRITE_REQ — addr=0x1 data=0xdc
+[11645] State: WRITE_WAIT — ack received, write complete
+[11655] State: READ_REQ — addr=0x7
+[11675] State: WRITE_REQ — addr=0x4 data=0x6d
+[11685] State: WRITE_WAIT — ack received, write complete
+[11695] State: READ_REQ — addr=0x5
+[11715] State: WRITE_REQ — addr=0x1 data=0xdf
+[11725] State: WRITE_WAIT — ack received, write complete
+[11735] State: READ_REQ — addr=0x4
+[11755] State: WRITE_REQ — addr=0x7 data=0xa9
+[11765] State: WRITE_WAIT — ack received, write complete
+[11775] State: READ_REQ — addr=0x1
+[11795] State: WRITE_REQ — addr=0x6 data=0xb5
+[11805] State: WRITE_WAIT — ack received, write complete
+[11815] State: READ_REQ — addr=0x3
+[11835] State: WRITE_REQ — addr=0x1 data=0xd1
+[11845] State: WRITE_WAIT — ack received, write complete
+[11855] State: READ_REQ — addr=0x5
+[11875] State: WRITE_REQ — addr=0x2 data=0x59
+[11885] State: WRITE_WAIT — ack received, write complete
+[11895] State: READ_REQ — addr=0x5
+[11915] State: WRITE_REQ — addr=0x1 data=0xd5
+[11925] State: WRITE_WAIT — ack received, write complete
+[11935] State: READ_REQ — addr=0x7
+[11955] State: WRITE_REQ — addr=0x7 data=0xaf
+[11965] State: WRITE_WAIT — ack received, write complete
+[11975] State: READ_REQ — addr=0x6
+[11995] State: WRITE_REQ — addr=0x6 data=0x44
+[12005] State: WRITE_WAIT — ack received, write complete
+[12015] State: READ_REQ — addr=0x3
+[12035] State: WRITE_REQ — addr=0x3 data=0x1
+[12045] State: WRITE_WAIT — ack received, write complete
+[12055] State: READ_REQ — addr=0x0
+[12075] State: WRITE_REQ — addr=0x1 data=0x27
+[12085] State: WRITE_WAIT — ack received, write complete
+[12095] State: READ_REQ — addr=0x2
+[12115] State: WRITE_REQ — addr=0x7 data=0xf7
+[12125] State: WRITE_WAIT — ack received, write complete
+[12135] State: READ_REQ — addr=0x5
+[12155] State: WRITE_REQ — addr=0x7 data=0x63
+[12165] State: WRITE_WAIT — ack received, write complete
+[12175] State: READ_REQ — addr=0x4
+[12195] State: WRITE_REQ — addr=0x5 data=0xa8
+[12205] State: WRITE_WAIT — ack received, write complete
+[12215] State: READ_REQ — addr=0x3
+[12235] State: WRITE_REQ — addr=0x6 data=0x46
+[12245] State: WRITE_WAIT — ack received, write complete
+[12255] State: READ_REQ — addr=0x2
+[12275] State: WRITE_REQ — addr=0x0 data=0x19
+[12285] State: WRITE_WAIT — ack received, write complete
+[12295] State: READ_REQ — addr=0x7
+[12315] State: WRITE_REQ — addr=0x3 data=0xd9
+[12325] State: WRITE_WAIT — ack received, write complete
+[12335] State: READ_REQ — addr=0x3
+[12355] State: WRITE_REQ — addr=0x5 data=0x65
+[12365] State: WRITE_WAIT — ack received, write complete
+[12375] State: READ_REQ — addr=0x3
+[12395] State: WRITE_REQ — addr=0x5 data=0x55
+[12405] State: WRITE_WAIT — ack received, write complete
+[12415] State: READ_REQ — addr=0x5
+[12435] State: WRITE_REQ — addr=0x6 data=0xe7
+[12445] State: WRITE_WAIT — ack received, write complete
+[12455] State: READ_REQ — addr=0x0
+[12475] State: WRITE_REQ — addr=0x4 data=0x15
+[12485] State: WRITE_WAIT — ack received, write complete
+[12495] State: READ_REQ — addr=0x6
+[12515] State: WRITE_REQ — addr=0x5 data=0x4c
+[12525] State: WRITE_WAIT — ack received, write complete
+[12535] State: READ_REQ — addr=0x6
+[12555] State: WRITE_REQ — addr=0x7 data=0xf2
+[12565] State: WRITE_WAIT — ack received, write complete
+[12575] State: READ_REQ — addr=0x0
+[12595] State: WRITE_REQ — addr=0x4 data=0xf6
+[12605] State: WRITE_WAIT — ack received, write complete
+[12615] State: READ_REQ — addr=0x6
+[12635] State: WRITE_REQ — addr=0x2 data=0x10
+[12645] State: WRITE_WAIT — ack received, write complete
+[12655] State: READ_REQ — addr=0x4
+[12675] State: WRITE_REQ — addr=0x1 data=0xc8
+[12685] State: WRITE_WAIT — ack received, write complete
+[12695] State: READ_REQ — addr=0x7
+[12715] State: WRITE_REQ — addr=0x1 data=0x89
+[12725] State: WRITE_WAIT — ack received, write complete
+[12735] State: READ_REQ — addr=0x6
+[12755] State: WRITE_REQ — addr=0x7 data=0x32
+[12765] State: WRITE_WAIT — ack received, write complete
+[12775] State: READ_REQ — addr=0x4
+[12795] State: WRITE_REQ — addr=0x0 data=0xa2
+[12805] State: WRITE_WAIT — ack received, write complete
+[12815] State: READ_REQ — addr=0x6
+[12835] State: WRITE_REQ — addr=0x3 data=0xe6
+[12845] State: WRITE_WAIT — ack received, write complete
+[12855] State: READ_REQ — addr=0x4
+[12875] State: WRITE_REQ — addr=0x3 data=0x99
+[12885] State: WRITE_WAIT — ack received, write complete
+[12895] State: READ_REQ — addr=0x5
+[12915] State: WRITE_REQ — addr=0x7 data=0x6a
+[12925] State: WRITE_WAIT — ack received, write complete
+[12935] State: READ_REQ — addr=0x4
+[12955] State: WRITE_REQ — addr=0x1 data=0x4b
+[12965] State: WRITE_WAIT — ack received, write complete
+[12975] State: READ_REQ — addr=0x6
+[12995] State: WRITE_REQ — addr=0x3 data=0x74
+[13005] State: WRITE_WAIT — ack received, write complete
+[13015] State: READ_REQ — addr=0x7
+[13035] State: WRITE_REQ — addr=0x4 data=0x9c
+[13045] State: WRITE_WAIT — ack received, write complete
+[13055] State: READ_REQ — addr=0x3
+[13075] State: WRITE_REQ — addr=0x6 data=0xab
+[13085] State: WRITE_WAIT — ack received, write complete
+[13095] State: READ_REQ — addr=0x3
+[13115] State: WRITE_REQ — addr=0x4 data=0xb2
+[13125] State: WRITE_WAIT — ack received, write complete
+[13135] State: READ_REQ — addr=0x6
+[13155] State: WRITE_REQ — addr=0x0 data=0x73
+[13165] State: WRITE_WAIT — ack received, write complete
+[13175] State: READ_REQ — addr=0x5
+[13195] State: WRITE_REQ — addr=0x0 data=0xfa
+[13205] State: WRITE_WAIT — ack received, write complete
+[13215] State: READ_REQ — addr=0x5
+[13235] State: WRITE_REQ — addr=0x4 data=0x0
+[13245] State: WRITE_WAIT — ack received, write complete
+[13255] State: READ_REQ — addr=0x3
+[13275] State: WRITE_REQ — addr=0x5 data=0x40
+[13285] State: WRITE_WAIT — ack received, write complete
+[13295] State: READ_REQ — addr=0x6
+[13315] State: WRITE_REQ — addr=0x6 data=0x97
+[13325] State: WRITE_WAIT — ack received, write complete
+[13335] State: READ_REQ — addr=0x4
+[13355] State: WRITE_REQ — addr=0x2 data=0x8f
+[13365] State: WRITE_WAIT — ack received, write complete
+[13375] State: READ_REQ — addr=0x4
+[13395] State: WRITE_REQ — addr=0x2 data=0x8a
+[13405] State: WRITE_WAIT — ack received, write complete
+[13415] State: READ_REQ — addr=0x3
+[13435] State: WRITE_REQ — addr=0x5 data=0x2d
+[13445] State: WRITE_WAIT — ack received, write complete
+[13455] State: READ_REQ — addr=0x1
+[13475] State: WRITE_REQ — addr=0x3 data=0xea
+[13485] State: WRITE_WAIT — ack received, write complete
+[13495] State: READ_REQ — addr=0x7
+[13515] State: WRITE_REQ — addr=0x5 data=0x30
+[13525] State: WRITE_WAIT — ack received, write complete
+[13535] State: READ_REQ — addr=0x2
+[13555] State: WRITE_REQ — addr=0x2 data=0x93
+[13565] State: WRITE_WAIT — ack received, write complete
+[13575] State: READ_REQ — addr=0x3
+[13595] State: WRITE_REQ — addr=0x0 data=0xee
+[13605] State: WRITE_WAIT — ack received, write complete
+[13615] State: READ_REQ — addr=0x6
+[13635] State: WRITE_REQ — addr=0x0 data=0x76
+[13645] State: WRITE_WAIT — ack received, write complete
+[13655] State: READ_REQ — addr=0x3
+[13675] State: WRITE_REQ — addr=0x4 data=0xe6
+[13685] State: WRITE_WAIT — ack received, write complete
+[13695] State: READ_REQ — addr=0x7
+[13715] State: WRITE_REQ — addr=0x6 data=0xcf
+[13725] State: WRITE_WAIT — ack received, write complete
+[13735] State: READ_REQ — addr=0x7
+[13755] State: WRITE_REQ — addr=0x2 data=0x16
+[13765] State: WRITE_WAIT — ack received, write complete
+[13775] State: READ_REQ — addr=0x4
+[13795] State: WRITE_REQ — addr=0x0 data=0xd7
+[13805] State: WRITE_WAIT — ack received, write complete
+[13815] State: READ_REQ — addr=0x2
+[13835] State: WRITE_REQ — addr=0x5 data=0x2
+[13845] State: WRITE_WAIT — ack received, write complete
+[13855] State: READ_REQ — addr=0x2
+[13875] State: WRITE_REQ — addr=0x1 data=0xca
+[13885] State: WRITE_WAIT — ack received, write complete
+[13895] State: READ_REQ — addr=0x0
+[13915] State: WRITE_REQ — addr=0x4 data=0x6c
+[13925] State: WRITE_WAIT — ack received, write complete
+[13935] State: READ_REQ — addr=0x3
+[13955] State: WRITE_REQ — addr=0x7 data=0x3f
+[13965] State: WRITE_WAIT — ack received, write complete
+[13975] State: READ_REQ — addr=0x5
+[13995] State: WRITE_REQ — addr=0x1 data=0xbd
+[14005] State: WRITE_WAIT — ack received, write complete
+[14015] State: READ_REQ — addr=0x5
+[14035] State: WRITE_REQ — addr=0x1 data=0x1f
+[14045] State: WRITE_WAIT — ack received, write complete
+[14055] State: READ_REQ — addr=0x7
+[14075] State: WRITE_REQ — addr=0x7 data=0x4c
+[14085] State: WRITE_WAIT — ack received, write complete
+[14095] State: READ_REQ — addr=0x3
+[14115] State: WRITE_REQ — addr=0x5 data=0x8e
+[14125] State: WRITE_WAIT — ack received, write complete
+[14135] State: READ_REQ — addr=0x0
+[14155] State: WRITE_REQ — addr=0x3 data=0xb2
+[14165] State: WRITE_WAIT — ack received, write complete
+[14175] State: READ_REQ — addr=0x1
+[14195] State: WRITE_REQ — addr=0x0 data=0x45
+[14205] State: WRITE_WAIT — ack received, write complete
+[14215] State: READ_REQ — addr=0x6
+[14235] State: WRITE_REQ — addr=0x7 data=0xc7
+[14245] State: WRITE_WAIT — ack received, write complete
+[14255] State: READ_REQ — addr=0x2
+[14275] State: WRITE_REQ — addr=0x5 data=0xb4
+[14285] State: WRITE_WAIT — ack received, write complete
+[14295] State: READ_REQ — addr=0x6
+[14315] State: WRITE_REQ — addr=0x5 data=0x4e
+[14325] State: WRITE_WAIT — ack received, write complete
+[14335] State: READ_REQ — addr=0x0
+[14355] State: WRITE_REQ — addr=0x7 data=0xbf
+[14365] State: WRITE_WAIT — ack received, write complete
+[14375] State: READ_REQ — addr=0x4
+[14395] State: WRITE_REQ — addr=0x3 data=0x96
+[14405] State: WRITE_WAIT — ack received, write complete
+[14415] State: READ_REQ — addr=0x7
+[14435] State: WRITE_REQ — addr=0x1 data=0x7f
+[14445] State: WRITE_WAIT — ack received, write complete
+[14455] State: READ_REQ — addr=0x7
+[14475] State: WRITE_REQ — addr=0x5 data=0x51
+[14485] State: WRITE_WAIT — ack received, write complete
+[14495] State: READ_REQ — addr=0x1
+[14515] State: WRITE_REQ — addr=0x1 data=0x6a
+[14525] State: WRITE_WAIT — ack received, write complete
+[14535] State: READ_REQ — addr=0x4
+[14555] State: WRITE_REQ — addr=0x5 data=0x31
+[14565] State: WRITE_WAIT — ack received, write complete
+[14575] State: READ_REQ — addr=0x5
+[14595] State: WRITE_REQ — addr=0x4 data=0xeb
+[14605] State: WRITE_WAIT — ack received, write complete
+[14615] State: READ_REQ — addr=0x5
+[14635] State: WRITE_REQ — addr=0x1 data=0x20
+[14645] State: WRITE_WAIT — ack received, write complete
+[14655] State: READ_REQ — addr=0x5
+[14675] State: WRITE_REQ — addr=0x3 data=0xba
+[14685] State: WRITE_WAIT — ack received, write complete
+[14695] State: READ_REQ — addr=0x4
+[14715] State: WRITE_REQ — addr=0x2 data=0x2d
+[14725] State: WRITE_WAIT — ack received, write complete
+[14735] State: READ_REQ — addr=0x7
+[14755] State: WRITE_REQ — addr=0x3 data=0xd9
+[14765] State: WRITE_WAIT — ack received, write complete
+[14775] State: READ_REQ — addr=0x4
+[14795] State: WRITE_REQ — addr=0x6 data=0x7c
+[14805] State: WRITE_WAIT — ack received, write complete
+[14815] State: READ_REQ — addr=0x4
+[14835] State: WRITE_REQ — addr=0x1 data=0x8b
+[14845] State: WRITE_WAIT — ack received, write complete
+[14855] State: READ_REQ — addr=0x2
+[14875] State: WRITE_REQ — addr=0x1 data=0xe9
+[14885] State: WRITE_WAIT — ack received, write complete
+[14895] State: READ_REQ — addr=0x6
+[14915] State: WRITE_REQ — addr=0x7 data=0x61
+[14925] State: WRITE_WAIT — ack received, write complete
+[14935] State: READ_REQ — addr=0x1
+[14955] State: WRITE_REQ — addr=0x3 data=0x3f
+[14965] State: WRITE_WAIT — ack received, write complete
+[14975] State: READ_REQ — addr=0x3
+[14995] State: WRITE_REQ — addr=0x2 data=0xfd
+[15005] State: WRITE_WAIT — ack received, write complete
+[15015] State: READ_REQ — addr=0x3
+[15035] State: WRITE_REQ — addr=0x0 data=0x27
+[15045] State: WRITE_WAIT — ack received, write complete
+[15055] State: READ_REQ — addr=0x6
+[15075] State: WRITE_REQ — addr=0x1 data=0x46
+[15085] State: WRITE_WAIT — ack received, write complete
+[15095] State: READ_REQ — addr=0x4
+[15115] State: WRITE_REQ — addr=0x4 data=0x44
+[15125] State: WRITE_WAIT — ack received, write complete
+[15135] State: READ_REQ — addr=0x2
+[15155] State: WRITE_REQ — addr=0x1 data=0x7c
+[15165] State: WRITE_WAIT — ack received, write complete
+[15175] State: READ_REQ — addr=0x6
+[15195] State: WRITE_REQ — addr=0x0 data=0x51
+[15205] State: WRITE_WAIT — ack received, write complete
+[15215] State: READ_REQ — addr=0x2
+[15235] State: WRITE_REQ — addr=0x5 data=0x66
+[15245] State: WRITE_WAIT — ack received, write complete
+[15255] State: READ_REQ — addr=0x5
+[15275] State: WRITE_REQ — addr=0x0 data=0x20
+[15285] State: WRITE_WAIT — ack received, write complete
+[15295] State: READ_REQ — addr=0x0
+[15315] State: WRITE_REQ — addr=0x4 data=0xd5
+[15325] State: WRITE_WAIT — ack received, write complete
+[15335] State: READ_REQ — addr=0x0
+[15355] State: WRITE_REQ — addr=0x1 data=0xc5
+[15365] State: WRITE_WAIT — ack received, write complete
+[15375] State: READ_REQ — addr=0x0
+[15395] State: WRITE_REQ — addr=0x3 data=0x16
+[15405] State: WRITE_WAIT — ack received, write complete
+[15415] State: READ_REQ — addr=0x6
+[15435] State: WRITE_REQ — addr=0x6 data=0xaa
+[15445] State: WRITE_WAIT — ack received, write complete
+[15455] State: READ_REQ — addr=0x2
+[15475] State: WRITE_REQ — addr=0x0 data=0x22
+[15485] State: WRITE_WAIT — ack received, write complete
+[15495] State: READ_REQ — addr=0x6
+[15515] State: WRITE_REQ — addr=0x3 data=0x8a
+[15525] State: WRITE_WAIT — ack received, write complete
+[15535] State: READ_REQ — addr=0x6
+[15555] State: WRITE_REQ — addr=0x1 data=0xc6
+[15565] State: WRITE_WAIT — ack received, write complete
+[15575] State: READ_REQ — addr=0x2
+[15595] State: WRITE_REQ — addr=0x3 data=0xa9
+[15605] State: WRITE_WAIT — ack received, write complete
+[15615] State: READ_REQ — addr=0x2
+[15635] State: WRITE_REQ — addr=0x3 data=0xd9
+[15645] State: WRITE_WAIT — ack received, write complete
+[15655] State: READ_REQ — addr=0x7
+[15675] State: WRITE_REQ — addr=0x1 data=0x8e
+[15685] State: WRITE_WAIT — ack received, write complete
+[15695] State: READ_REQ — addr=0x4
+[15715] State: WRITE_REQ — addr=0x0 data=0x96
+[15725] State: WRITE_WAIT — ack received, write complete
+[15735] State: READ_REQ — addr=0x3
+[15755] State: WRITE_REQ — addr=0x7 data=0x34
+[15765] State: WRITE_WAIT — ack received, write complete
+[15775] State: READ_REQ — addr=0x3
+[15795] State: WRITE_REQ — addr=0x7 data=0x40
+[15805] State: WRITE_WAIT — ack received, write complete
+[15815] State: READ_REQ — addr=0x6
+[15835] State: WRITE_REQ — addr=0x7 data=0x96
+[15845] State: WRITE_WAIT — ack received, write complete
+[15855] State: READ_REQ — addr=0x4
+[15875] State: WRITE_REQ — addr=0x4 data=0x43
+[15885] State: WRITE_WAIT — ack received, write complete
+[15895] State: READ_REQ — addr=0x6
+[15915] State: WRITE_REQ — addr=0x2 data=0x25
+[15925] State: WRITE_WAIT — ack received, write complete
+[15935] State: READ_REQ — addr=0x7
+[15955] State: WRITE_REQ — addr=0x3 data=0x47
+[15965] State: WRITE_WAIT — ack received, write complete
+[15975] State: READ_REQ — addr=0x7
+[15995] State: WRITE_REQ — addr=0x5 data=0x9c
+[16005] State: WRITE_WAIT — ack received, write complete
+[16015] State: READ_REQ — addr=0x6
+[16035] State: WRITE_REQ — addr=0x6 data=0x30
+[16045] State: WRITE_WAIT — ack received, write complete
+[16055] State: READ_REQ — addr=0x5
+[16075] State: WRITE_REQ — addr=0x2 data=0x8
+[16085] State: WRITE_WAIT — ack received, write complete
+[16095] State: READ_REQ — addr=0x1
+[16115] State: WRITE_REQ — addr=0x6 data=0x8b
+[16125] State: WRITE_WAIT — ack received, write complete
+[16135] State: READ_REQ — addr=0x5
+[16155] State: WRITE_REQ — addr=0x0 data=0x19
+[16165] State: WRITE_WAIT — ack received, write complete
+[16175] State: READ_REQ — addr=0x3
+[16195] State: WRITE_REQ — addr=0x1 data=0xbd
+[16205] State: WRITE_WAIT — ack received, write complete
+[16215] State: READ_REQ — addr=0x4
+[16235] State: WRITE_REQ — addr=0x5 data=0xbe
+[16245] State: WRITE_WAIT — ack received, write complete
+[16255] State: READ_REQ — addr=0x4
+[16275] State: WRITE_REQ — addr=0x6 data=0x8
+[16285] State: WRITE_WAIT — ack received, write complete
+[16295] State: READ_REQ — addr=0x1
+[16315] State: WRITE_REQ — addr=0x3 data=0x4f
+[16325] State: WRITE_WAIT — ack received, write complete
+[16335] State: READ_REQ — addr=0x0
+[16355] State: WRITE_REQ — addr=0x0 data=0x3d
+[16365] State: WRITE_WAIT — ack received, write complete
+[16375] State: READ_REQ — addr=0x3
+[16395] State: WRITE_REQ — addr=0x2 data=0xa9
+[16405] State: WRITE_WAIT — ack received, write complete
+[16415] State: READ_REQ — addr=0x0
+[16435] State: WRITE_REQ — addr=0x1 data=0xb1
+[16445] State: WRITE_WAIT — ack received, write complete
+[16455] State: READ_REQ — addr=0x0
+[16475] State: WRITE_REQ — addr=0x6 data=0x69
+[16485] State: WRITE_WAIT — ack received, write complete
+[16495] State: READ_REQ — addr=0x6
+[16515] State: WRITE_REQ — addr=0x6 data=0xc4
+[16525] State: WRITE_WAIT — ack received, write complete
+[16535] State: READ_REQ — addr=0x1
+[16555] State: WRITE_REQ — addr=0x7 data=0x56
+[16565] State: WRITE_WAIT — ack received, write complete
+[16575] State: READ_REQ — addr=0x5
+[16595] State: WRITE_REQ — addr=0x4 data=0x79
+[16605] State: WRITE_WAIT — ack received, write complete
+[16615] State: READ_REQ — addr=0x0
+[16635] State: WRITE_REQ — addr=0x4 data=0xd3
+[16645] State: WRITE_WAIT — ack received, write complete
+[16655] State: READ_REQ — addr=0x3
+[16675] State: WRITE_REQ — addr=0x1 data=0x47
+[16685] State: WRITE_WAIT — ack received, write complete
+[16695] State: READ_REQ — addr=0x1
+[16715] State: WRITE_REQ — addr=0x3 data=0xd9
+[16725] State: WRITE_WAIT — ack received, write complete
+[16735] State: READ_REQ — addr=0x3
+[16755] State: WRITE_REQ — addr=0x4 data=0x31
+[16765] State: WRITE_WAIT — ack received, write complete
+[16775] State: READ_REQ — addr=0x0
+[16795] State: WRITE_REQ — addr=0x1 data=0x10
+[16805] State: WRITE_WAIT — ack received, write complete
+[16815] State: READ_REQ — addr=0x1
+[16835] State: WRITE_REQ — addr=0x5 data=0x78
+[16845] State: WRITE_WAIT — ack received, write complete
+[16855] State: READ_REQ — addr=0x5
+[16875] State: WRITE_REQ — addr=0x6 data=0x32
+[16885] State: WRITE_WAIT — ack received, write complete
+[16895] State: READ_REQ — addr=0x6
+[16915] State: WRITE_REQ — addr=0x1 data=0xa7
+[16925] State: WRITE_WAIT — ack received, write complete
+[16935] State: READ_REQ — addr=0x4
+[16955] State: WRITE_REQ — addr=0x6 data=0xf8
+[16965] State: WRITE_WAIT — ack received, write complete
+[16975] State: READ_REQ — addr=0x7
+[16995] State: WRITE_REQ — addr=0x7 data=0xf6
+[17005] State: WRITE_WAIT — ack received, write complete
+[17015] State: READ_REQ — addr=0x6
+[17035] State: WRITE_REQ — addr=0x5 data=0x64
+[17045] State: WRITE_WAIT — ack received, write complete
+[17055] State: READ_REQ — addr=0x1
+[17075] State: WRITE_REQ — addr=0x7 data=0x50
+[17085] State: WRITE_WAIT — ack received, write complete
+[17095] State: READ_REQ — addr=0x2
+[17115] State: WRITE_REQ — addr=0x4 data=0xc8
+[17125] State: WRITE_WAIT — ack received, write complete
+[17135] State: READ_REQ — addr=0x3
+[17155] State: WRITE_REQ — addr=0x0 data=0xe1
+[17165] State: WRITE_WAIT — ack received, write complete
+[17175] State: READ_REQ — addr=0x7
+[17195] State: WRITE_REQ — addr=0x4 data=0xcc
+[17205] State: WRITE_WAIT — ack received, write complete
+[17215] State: READ_REQ — addr=0x7
+[17235] State: WRITE_REQ — addr=0x7 data=0x8f
+[17245] State: WRITE_WAIT — ack received, write complete
+[17255] State: READ_REQ — addr=0x3
+[17275] State: WRITE_REQ — addr=0x6 data=0xb6
+[17285] State: WRITE_WAIT — ack received, write complete
+[17295] State: READ_REQ — addr=0x3
+[17315] State: WRITE_REQ — addr=0x7 data=0x6e
+[17325] State: WRITE_WAIT — ack received, write complete
+[17335] State: READ_REQ — addr=0x7
+[17355] State: WRITE_REQ — addr=0x7 data=0x22
+[17365] State: WRITE_WAIT — ack received, write complete
+[17375] State: READ_REQ — addr=0x6
+[17395] State: WRITE_REQ — addr=0x5 data=0xe9
+[17405] State: WRITE_WAIT — ack received, write complete
+[17415] State: READ_REQ — addr=0x5
+[17435] State: WRITE_REQ — addr=0x0 data=0xc9
+[17445] State: WRITE_WAIT — ack received, write complete
+[17455] State: READ_REQ — addr=0x3
+[17475] State: WRITE_REQ — addr=0x7 data=0x47
+[17485] State: WRITE_WAIT — ack received, write complete
+[17495] State: READ_REQ — addr=0x7
+[17515] State: WRITE_REQ — addr=0x5 data=0x33
+[17525] State: WRITE_WAIT — ack received, write complete
+[17535] State: READ_REQ — addr=0x3
+[17555] State: WRITE_REQ — addr=0x7 data=0xfc
+[17565] State: WRITE_WAIT — ack received, write complete
+[17575] State: READ_REQ — addr=0x7
+[17595] State: WRITE_REQ — addr=0x1 data=0x1d
+[17605] State: WRITE_WAIT — ack received, write complete
+[17615] State: READ_REQ — addr=0x6
+[17635] State: WRITE_REQ — addr=0x2 data=0x86
+[17645] State: WRITE_WAIT — ack received, write complete
+[17655] State: READ_REQ — addr=0x6
+[17675] State: WRITE_REQ — addr=0x1 data=0xb8
+[17685] State: WRITE_WAIT — ack received, write complete
+[17695] State: READ_REQ — addr=0x6
+[17715] State: WRITE_REQ — addr=0x5 data=0xf5
+[17725] State: WRITE_WAIT — ack received, write complete
+[17735] State: READ_REQ — addr=0x2
+[17755] State: WRITE_REQ — addr=0x0 data=0x81
+[17765] State: WRITE_WAIT — ack received, write complete
+[17775] State: READ_REQ — addr=0x3
+[17795] State: WRITE_REQ — addr=0x3 data=0x8e
+[17805] State: WRITE_WAIT — ack received, write complete
+[17815] State: READ_REQ — addr=0x5
+[17835] State: WRITE_REQ — addr=0x2 data=0x50
+[17845] State: WRITE_WAIT — ack received, write complete
+[17855] State: READ_REQ — addr=0x1
+[17875] State: WRITE_REQ — addr=0x7 data=0x4c
+[17885] State: WRITE_WAIT — ack received, write complete
+[17895] State: READ_REQ — addr=0x2
+[17915] State: WRITE_REQ — addr=0x5 data=0x58
+[17925] State: WRITE_WAIT — ack received, write complete
+[17935] State: READ_REQ — addr=0x6
+[17955] State: WRITE_REQ — addr=0x5 data=0x13
+[17965] State: WRITE_WAIT — ack received, write complete
+[17975] State: READ_REQ — addr=0x2
+[17995] State: WRITE_REQ — addr=0x4 data=0x1f
+[18005] State: WRITE_WAIT — ack received, write complete
+[18015] State: READ_REQ — addr=0x0
+[18035] State: WRITE_REQ — addr=0x7 data=0x20
+[18045] State: WRITE_WAIT — ack received, write complete
+[18055] State: READ_REQ — addr=0x1
+[18075] State: WRITE_REQ — addr=0x3 data=0x88
+[18085] State: WRITE_WAIT — ack received, write complete
+[18095] State: READ_REQ — addr=0x3
+[18115] State: WRITE_REQ — addr=0x6 data=0xc
+[18125] State: WRITE_WAIT — ack received, write complete
+[18135] State: READ_REQ — addr=0x3
+[18155] State: WRITE_REQ — addr=0x2 data=0x1e
+[18165] State: WRITE_WAIT — ack received, write complete
+[18175] State: READ_REQ — addr=0x5
+[18195] State: WRITE_REQ — addr=0x6 data=0x9
+[18205] State: WRITE_WAIT — ack received, write complete
+[18215] State: READ_REQ — addr=0x6
+[18235] State: WRITE_REQ — addr=0x4 data=0xe0
+[18245] State: WRITE_WAIT — ack received, write complete
+[18255] State: READ_REQ — addr=0x7
+[18275] State: WRITE_REQ — addr=0x6 data=0x96
+[18285] State: WRITE_WAIT — ack received, write complete
+[18295] State: READ_REQ — addr=0x1
+[18315] State: WRITE_REQ — addr=0x3 data=0x93
+[18325] State: WRITE_WAIT — ack received, write complete
+[18335] State: READ_REQ — addr=0x4
+[18355] State: WRITE_REQ — addr=0x0 data=0x59
+[18365] State: WRITE_WAIT — ack received, write complete
+[18375] State: READ_REQ — addr=0x5
+[18395] State: WRITE_REQ — addr=0x5 data=0x69
+[18405] State: WRITE_WAIT — ack received, write complete
+[18415] State: READ_REQ — addr=0x1
+[18435] State: WRITE_REQ — addr=0x1 data=0xe6
+[18445] State: WRITE_WAIT — ack received, write complete
+[18455] State: READ_REQ — addr=0x4
+[18475] State: WRITE_REQ — addr=0x1 data=0x1
+[18485] State: WRITE_WAIT — ack received, write complete
+[18495] State: READ_REQ — addr=0x2
+[18515] State: WRITE_REQ — addr=0x1 data=0xed
+[18525] State: WRITE_WAIT — ack received, write complete
+[18535] State: READ_REQ — addr=0x4
+[18555] State: WRITE_REQ — addr=0x2 data=0x4
+[18565] State: WRITE_WAIT — ack received, write complete
+[18575] State: READ_REQ — addr=0x0
+[18595] State: WRITE_REQ — addr=0x0 data=0x6e
+[18605] State: WRITE_WAIT — ack received, write complete
+[18615] State: READ_REQ — addr=0x2
+[18635] State: WRITE_REQ — addr=0x1 data=0x60
+[18645] State: WRITE_WAIT — ack received, write complete
+[18655] State: READ_REQ — addr=0x2
+[18675] State: WRITE_REQ — addr=0x1 data=0x8b
+[18685] State: WRITE_WAIT — ack received, write complete
+[18695] State: READ_REQ — addr=0x1
+[18715] State: WRITE_REQ — addr=0x4 data=0x57
+[18725] State: WRITE_WAIT — ack received, write complete
+[18735] State: READ_REQ — addr=0x7
+[18755] State: WRITE_REQ — addr=0x3 data=0x3a
+[18765] State: WRITE_WAIT — ack received, write complete
+[18775] State: READ_REQ — addr=0x0
+[18795] State: WRITE_REQ — addr=0x0 data=0x31
+[18805] State: WRITE_WAIT — ack received, write complete
+[18815] State: READ_REQ — addr=0x5
+[18835] State: WRITE_REQ — addr=0x7 data=0x7a
+[18845] State: WRITE_WAIT — ack received, write complete
+[18855] State: READ_REQ — addr=0x5
+[18875] State: WRITE_REQ — addr=0x4 data=0x49
+[18885] State: WRITE_WAIT — ack received, write complete
+[18895] State: READ_REQ — addr=0x5
+[18915] State: WRITE_REQ — addr=0x1 data=0xb5
+[18925] State: WRITE_WAIT — ack received, write complete
+[18935] State: READ_REQ — addr=0x0
+[18955] State: WRITE_REQ — addr=0x4 data=0xb1
+[18965] State: WRITE_WAIT — ack received, write complete
+[18975] State: READ_REQ — addr=0x3
+[18995] State: WRITE_REQ — addr=0x5 data=0x57
+[19005] State: WRITE_WAIT — ack received, write complete
+[19015] State: READ_REQ — addr=0x7
+[19035] State: WRITE_REQ — addr=0x7 data=0x57
+[19045] State: WRITE_WAIT — ack received, write complete
+[19055] State: READ_REQ — addr=0x7
+[19075] State: WRITE_REQ — addr=0x0 data=0x49
+[19085] State: WRITE_WAIT — ack received, write complete
+[19095] State: READ_REQ — addr=0x5
+[19115] State: WRITE_REQ — addr=0x7 data=0xd1
+[19125] State: WRITE_WAIT — ack received, write complete
+[19135] State: READ_REQ — addr=0x3
+[19155] State: WRITE_REQ — addr=0x0 data=0x15
+[19165] State: WRITE_WAIT — ack received, write complete
+[19175] State: READ_REQ — addr=0x2
+[19195] State: WRITE_REQ — addr=0x2 data=0x3a
+[19205] State: WRITE_WAIT — ack received, write complete
+[19215] State: READ_REQ — addr=0x1
+[19235] State: WRITE_REQ — addr=0x7 data=0xe0
+[19245] State: WRITE_WAIT — ack received, write complete
+[19255] State: READ_REQ — addr=0x3
+[19275] State: WRITE_REQ — addr=0x7 data=0x10
+[19285] State: WRITE_WAIT — ack received, write complete
+[19295] State: READ_REQ — addr=0x4
+[19315] State: WRITE_REQ — addr=0x5 data=0xab
+[19325] State: WRITE_WAIT — ack received, write complete
+[19335] State: READ_REQ — addr=0x1
+[19355] State: WRITE_REQ — addr=0x6 data=0x39
+[19365] State: WRITE_WAIT — ack received, write complete
+[19375] State: READ_REQ — addr=0x4
+[19395] State: WRITE_REQ — addr=0x0 data=0xc2
+[19405] State: WRITE_WAIT — ack received, write complete
+[19415] State: READ_REQ — addr=0x2
+[19435] State: WRITE_REQ — addr=0x6 data=0x2b
+[19445] State: WRITE_WAIT — ack received, write complete
+[19455] State: READ_REQ — addr=0x3
+[19475] State: WRITE_REQ — addr=0x0 data=0xa9
+[19485] State: WRITE_WAIT — ack received, write complete
+[19495] State: READ_REQ — addr=0x1
+[19515] State: WRITE_REQ — addr=0x4 data=0x88
+[19525] State: WRITE_WAIT — ack received, write complete
+[19535] State: READ_REQ — addr=0x1
+[19555] State: WRITE_REQ — addr=0x6 data=0x4f
+[19565] State: WRITE_WAIT — ack received, write complete
+[19575] State: READ_REQ — addr=0x2
+[19595] State: WRITE_REQ — addr=0x3 data=0x8d
+[19605] State: WRITE_WAIT — ack received, write complete
+[19615] State: READ_REQ — addr=0x7
+[19635] State: WRITE_REQ — addr=0x3 data=0xbc
+[19645] State: WRITE_WAIT — ack received, write complete
+[19655] State: READ_REQ — addr=0x4
+[19675] State: WRITE_REQ — addr=0x1 data=0x8f
+[19685] State: WRITE_WAIT — ack received, write complete
+[19695] State: READ_REQ — addr=0x0
+[19715] State: WRITE_REQ — addr=0x6 data=0xea
+[19725] State: WRITE_WAIT — ack received, write complete
+[19735] State: READ_REQ — addr=0x4
+[19755] State: WRITE_REQ — addr=0x0 data=0x7e
+[19765] State: WRITE_WAIT — ack received, write complete
+[19775] State: READ_REQ — addr=0x3
+[19795] State: WRITE_REQ — addr=0x1 data=0x62
+[19805] State: WRITE_WAIT — ack received, write complete
+[19815] State: READ_REQ — addr=0x6
+[19835] State: WRITE_REQ — addr=0x6 data=0x6c
+[19845] State: WRITE_WAIT — ack received, write complete
+[19855] State: READ_REQ — addr=0x5
+[19875] State: WRITE_REQ — addr=0x3 data=0xbb
+[19885] State: WRITE_WAIT — ack received, write complete
+[19895] State: READ_REQ — addr=0x3
+[19915] State: WRITE_REQ — addr=0x2 data=0xb5
+[19925] State: WRITE_WAIT — ack received, write complete
+[19935] State: READ_REQ — addr=0x3
+[19955] State: WRITE_REQ — addr=0x7 data=0x87
+[19965] State: WRITE_WAIT — ack received, write complete
+[19975] State: READ_REQ — addr=0x3
+[19995] State: WRITE_REQ — addr=0x6 data=0xcb
+[20005] State: WRITE_WAIT — ack received, write complete
+[20015] State: READ_REQ — addr=0x5
+RESULTS: 500 PASSED, 0 FAILED
+Test passed
+- memory_tb.sv:148: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.054 2026-11-01
+- Verilator: $finish at 20ns; walltime 0.009 s; speed 2.108 us/s
+- Verilator: cpu 0.008 s on 1 threads; allocated 4 MB
+

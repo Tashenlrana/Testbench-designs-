@@ -1,3 +1,6 @@
+//Self-Checking a Combinational DUT (part 1)
+//DUT will be adder.sv
+
 module tb_adder_selfcheck;
 //DUT signals
 

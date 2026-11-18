@@ -1,7 +1,7 @@
 // DUT: 8x8 synchronous memory with acknowledge handshake
 // Write: assert wr_en=1, provide addr and wr_data, wait for ack
 // Read:  assert rd_en=1, provide addr, wait for ack, then sample rd_data
-//THIS WILL BE DUT for tb_mem.sv(for extend to memory interface) and memory_tb.sv ( Make the Memory Testbench Self-Checking)
+//THIS WILL BE DUT for tb_mem.sv(for extend to memory interface) and memory_tb.sv ( Make the Memory Testbench Self-Checking the challenge)
 module mem_dut (
     input        clk,
     input        rst,
@@ -35,3 +35,4 @@ module mem_dut (
     end
 
 endmodule
+

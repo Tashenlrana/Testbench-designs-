@@ -1,3 +1,5 @@
+//Selfchecking testbench Part 1
+//Corresponding testbench will be  tb_adder_selfcheck
 // DUT: 4-bit adder
 // Inputs : a, b  (4-bit operands)
 //          cin   (carry-in from a previous stage)
