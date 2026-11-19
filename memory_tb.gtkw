@@ -1,0 +1,46 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Thu Nov 19 05:29:18 2026
+[*]
+[dumpfile] "/home/tashen/Documents/Testbenches/memory_tb.vcd"
+[dumpfile_mtime] "Thu Nov 19 05:18:32 2026"
+[dumpfile_size] 117349
+[savefile] "/home/tashen/Documents/Testbenches/memory_tb.gtkw"
+[timestart] 0
+[size] 1920 1033
+[pos] 1753 -133
+*-15.000000 182100 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] memory_tb.
+[sst_width] 278
+[signals_width] 293
+[sst_expanded] 1
+[sst_vpaned_height] 308
+@28
+memory_tb.dut.ack
+memory_tb.dut.addr[2:0]
+memory_tb.dut.clk
+@22
+memory_tb.dut.i[31:0]
+memory_tb.dut.mem[0][7:0]
+memory_tb.dut.mem[1][7:0]
+memory_tb.dut.mem[2][7:0]
+memory_tb.dut.mem[3][7:0]
+memory_tb.dut.mem[4][7:0]
+memory_tb.dut.mem[5][7:0]
+memory_tb.dut.mem[6][7:0]
+memory_tb.dut.mem[7][7:0]
+memory_tb.dut.rd_data[7:0]
+memory_tb.READ_REQ[31:0]
+@29
+memory_tb.dut.rd_en
+@28
+memory_tb.dut.rst
+@22
+memory_tb.dut.wr_data[7:0]
+@28
+memory_tb.dut.wr_en
+@22
+memory_tb.WRITE_REQ[31:0]
+memory_tb.state[31:0]
+[pattern_trace] 1
+[pattern_trace] 0
