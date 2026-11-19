@@ -84,7 +84,6 @@ GTKWave results  Challenge 3 GTKA Waveform.png
 ![alt text](image-1.png)
 
 
-
 # Selfchecking testbench 
 
 # Challenge 4
