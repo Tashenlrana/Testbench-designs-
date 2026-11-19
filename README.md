@@ -81,7 +81,7 @@ Verilator Simulation results are included in this file Part 2: Checking a Pipeli
 
 GTKWave results  Challenge 3 GTKA Waveform.png
 
-![alt text](image-1.png)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/325103d3-928b-4786-a9f3-4892b3ab7ab1" />
 
 
 # Selfchecking testbench 
