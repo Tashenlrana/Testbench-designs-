@@ -1,4 +1,4 @@
-//Self-Checking a Combinational DUT (part 1)
+//Self-Checking a Combinational DUT 
 //DUT will be adder.sv
 
 module tb_adder_selfcheck;
@@ -27,7 +27,7 @@ always #5 clk=~clk;
 integer i;
 integer pass_count;
 integer fail_count;
-reg [4:0] expected; // 5bit {cout_expeccted,sum_expected}
+reg [4:0] expected; // 5bit {cout_expected,sum_expected}
 
 initial begin
     $display("Seed=%0d", $get_initial_random_seed());

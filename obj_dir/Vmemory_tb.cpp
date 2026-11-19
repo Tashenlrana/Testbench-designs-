@@ -151,6 +151,14 @@ VL_ATTR_COLD void Vmemory_tb::dumpTriggersReact() {
     Vmemory_tb___024root___eval_dump_triggers__react(&(vlSymsp->vlInst.TOP));
 }
 
+void Vmemory_tb::eval_end_step() {
+    VL_DEBUG_IF(VL_DBG_MSGF("+eval_end_step Vmemory_tb::eval_end_step\n"); );
+#ifdef VM_TRACE
+    // Tracing
+    if (VL_UNLIKELY(vlSymsp->__Vm_dumping)) vlSymsp->_traceDump();
+#endif  // VM_TRACE
+}
+
 //============================================================
 // Events and timing
 bool Vmemory_tb::eventsPending() { return !vlSymsp->vlInst.TOP.__Vnontrivs.__VdlySched.empty() && !contextp()->gotFinish(); }

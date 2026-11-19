@@ -77,7 +77,7 @@ endtask
 
 initial begin
     $display("Seed=%0d",$get_initial_random_seed());
-    $dumpfile("waveform.vcd");//For Verilator Waveforms
+    $dumpfile("pipe_tb.vcd");//For Verilator Waveforms
     $dumpvars(0,tb_pipe_selfcheck);//For Verilator Waveforms
 
     q_head=0; q_tail=0; q_count=0;

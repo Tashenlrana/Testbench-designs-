@@ -97,7 +97,7 @@ bool Vmemory_tb___024root___eval_inact(Vmemory_tb___024root* vlSelf) {
     // Body
     __VinactExecute = vlSelfRef.__Vnontrivs.__VdlySched.awaitingZeroDelay();
     if (__VinactExecute) {
-        VL_FATAL_MT("memory_tb.sv", 4, "", "ZERODLY: Design Verilated with '--no-sched-zero-delay', but #0 delay executed at runtime");
+        VL_FATAL_MT("memory_tb.sv", 5, "", "ZERODLY: Design Verilated with '--no-sched-zero-delay', but #0 delay executed at runtime");
     }
     return (__VinactExecute);
 }
@@ -216,6 +216,8 @@ VlCoroutine Vmemory_tb___024root___eval_initial__TOP__Vtiming__0(Vmemory_tb___02
     VL_WRITEF_NX("Seed=%0d\n",1, '~',32,vlSymsp->_vm_contextp__->randSeed());
     vlSelfRef.memory_tb__DOT__pass_count = 0U;
     vlSelfRef.memory_tb__DOT__fail_count = 0U;
+    vlSymsp->_vm_contextp__->dumpfile("memory_tb.vcd"s);
+    vlSymsp->_traceDumpOpen();
     vlSelfRef.memory_tb__DOT__shadow_mem[0U] = 0U;
     vlSelfRef.memory_tb__DOT__shadow_mem[1U] = 0U;
     vlSelfRef.memory_tb__DOT__shadow_mem[2U] = 0U;
@@ -231,7 +233,7 @@ VlCoroutine Vmemory_tb___024root___eval_initial__TOP__Vtiming__0(Vmemory_tb___02
                                                                      nullptr, 
                                                                      "@(posedge memory_tb.clk)", 
                                                                      "memory_tb.sv", 
-                                                                     75);
+                                                                     79);
     vlSelfRef.__VtraceActivity[2U] = 1U;
     Vmemory_tb___024root____VbeforeTrig_h4fa393ec__0(vlSelf, 
                                                      "@(posedge memory_tb.clk)");
@@ -239,7 +241,7 @@ VlCoroutine Vmemory_tb___024root___eval_initial__TOP__Vtiming__0(Vmemory_tb___02
                                                                      nullptr, 
                                                                      "@(posedge memory_tb.clk)", 
                                                                      "memory_tb.sv", 
-                                                                     76);
+                                                                     80);
     vlSelfRef.__VtraceActivity[2U] = 1U;
     vlSelfRef.memory_tb__DOT__rst = 0U;
     {
@@ -250,13 +252,13 @@ VlCoroutine Vmemory_tb___024root___eval_initial__TOP__Vtiming__0(Vmemory_tb___02
                                                                              nullptr, 
                                                                              "@(posedge memory_tb.clk)", 
                                                                              "memory_tb.sv", 
-                                                                             81);
+                                                                             85);
             vlSelfRef.__VtraceActivity[2U] = 1U;
             if (VL_UNLIKELY(((0U == vlSelfRef.memory_tb__DOT__state)))) {
                 vlSelfRef.memory_tb__DOT__wr_en = 0U;
                 vlSelfRef.memory_tb__DOT__rd_en = 0U;
-                VL_WRITEF_NX("[%0t] State: IDLE \342\200\224 starting write transaction\n",2, 'T',-12
-                             , '#',64,VL_TIME_UNITED_Q(1));
+                VL_WRITEF_NX("[%0t] State: IDLE \342\200\224 starting write transaction\n",2, 'T',-9
+                             , '#',64,VL_TIME_UNITED_Q(1000));
                 vlSelfRef.memory_tb__DOT__state = 1U;
             } else if (VL_UNLIKELY(((1U == vlSelfRef.memory_tb__DOT__state)))) {
                 vlSelfRef.memory_tb__DOT__wr_en = 1U;
@@ -266,24 +268,24 @@ VlCoroutine Vmemory_tb___024root___eval_initial__TOP__Vtiming__0(Vmemory_tb___02
                     (0x000000ffU & VL_RANDOM_I());
                 vlSelfRef.memory_tb__DOT__shadow_mem[vlSelfRef.memory_tb__DOT__addr] 
                     = vlSelfRef.memory_tb__DOT__wr_data;
-                VL_WRITEF_NX("[%0t] State: WRITE_REQ \342\200\224 addr=0x%0h data=0x%0h\n",4, 'T',-12
-                             , '#',64,VL_TIME_UNITED_Q(1)
+                VL_WRITEF_NX("[%0t] State: WRITE_REQ \342\200\224 addr=0x%0h data=0x%0h\n",4, 'T',-9
+                             , '#',64,VL_TIME_UNITED_Q(1000)
                              , '#',3,(::IData)(vlSelfRef.memory_tb__DOT__addr)
                              , '#',8,vlSelfRef.memory_tb__DOT__wr_data);
                 vlSelfRef.memory_tb__DOT__state = 2U;
             } else if ((2U == vlSelfRef.memory_tb__DOT__state)) {
                 if (VL_UNLIKELY((vlSelfRef.memory_tb__DOT__dut__DOT__ack))) {
                     vlSelfRef.memory_tb__DOT__wr_en = 0U;
-                    VL_WRITEF_NX("[%0t] State: WRITE_WAIT \342\200\224 ack received, write complete\n",2, 'T',-12
-                                 , '#',64,VL_TIME_UNITED_Q(1));
+                    VL_WRITEF_NX("[%0t] State: WRITE_WAIT \342\200\224 ack received, write complete\n",2, 'T',-9
+                                 , '#',64,VL_TIME_UNITED_Q(1000));
                     vlSelfRef.memory_tb__DOT__state = 3U;
                 }
             } else if (VL_UNLIKELY(((3U == vlSelfRef.memory_tb__DOT__state)))) {
                 vlSelfRef.memory_tb__DOT__rd_en = 1U;
                 vlSelfRef.memory_tb__DOT__addr = (7U 
                                                   & VL_RANDOM_I());
-                VL_WRITEF_NX("[%0t] State: READ_REQ \342\200\224 addr=0x%0h\n",3, 'T',-12
-                             , '#',64,VL_TIME_UNITED_Q(1)
+                VL_WRITEF_NX("[%0t] State: READ_REQ \342\200\224 addr=0x%0h\n",3, 'T',-9
+                             , '#',64,VL_TIME_UNITED_Q(1000)
                              , '#',3,(::IData)(vlSelfRef.memory_tb__DOT__addr));
                 vlSelfRef.memory_tb__DOT__state = 4U;
             } else if ((4U == vlSelfRef.memory_tb__DOT__state)) {
@@ -292,14 +294,14 @@ VlCoroutine Vmemory_tb___024root___eval_initial__TOP__Vtiming__0(Vmemory_tb___02
                     if (VL_UNLIKELY((((::IData)(vlSelfRef.memory_tb__DOT__dut__DOT__rd_data) 
                                       != vlSelfRef.memory_tb__DOT__shadow_mem
                                       [vlSelfRef.memory_tb__DOT__addr])))) {
-                        VL_WRITEF_NX("[%0t] %%Error: memory_tb.sv:135: Assertion failed in %m: FAIL cycle %0d: addr=0x%0h expected=0x%0h got=0x%0h\n",7, 'M',vlSymsp->__Vm_topNames[1].c_str(),"", 'T',-12
-                                     , '#',64,VL_TIME_UNITED_Q(1)
+                        VL_WRITEF_NX("[%0t] %%Error: memory_tb.sv:139: Assertion failed in %m: FAIL cycle %0d: addr=0x%0h expected=0x%0h got=0x%0h\n",7, 'M',vlSymsp->__Vm_topNames[1].c_str(),"", 'T',-9
+                                     , '#',64,VL_TIME_UNITED_Q(1000)
                                      , '~',32,vlSelfRef.memory_tb__DOT__cycle
                                      , '#',3,(::IData)(vlSelfRef.memory_tb__DOT__addr)
                                      , '#',8,vlSelfRef.memory_tb__DOT__shadow_mem
                                      [vlSelfRef.memory_tb__DOT__addr]
                                      , '#',8,vlSelfRef.memory_tb__DOT__dut__DOT__rd_data);
-                        VL_STOP_MT("memory_tb.sv", 135, "");
+                        VL_STOP_MT("memory_tb.sv", 139, "");
                         vlSelfRef.memory_tb__DOT__fail_count 
                             = ((::IData)(1U) + vlSelfRef.memory_tb__DOT__fail_count);
                     } else {
@@ -315,13 +317,13 @@ VlCoroutine Vmemory_tb___024root___eval_initial__TOP__Vtiming__0(Vmemory_tb___02
                                      , '~',32,vlSelfRef.memory_tb__DOT__pass_count
                                      , '~',32,vlSelfRef.memory_tb__DOT__fail_count);
                         if (VL_UNLIKELY((VL_LTS_III(32, 0U, vlSelfRef.memory_tb__DOT__fail_count)))) {
-                            VL_WRITEF_NX("[%0t] %%Fatal: memory_tb.sv:146: Assertion failed in %m: Test failed\n",3, 'M',vlSymsp->__Vm_topNames[1].c_str(),"", 'T',-12
-                                         , '#',64,VL_TIME_UNITED_Q(1));
-                            VL_STOP_MT("memory_tb.sv", 146, "", false);
+                            VL_WRITEF_NX("[%0t] %%Fatal: memory_tb.sv:150: Assertion failed in %m: Test failed\n",3, 'M',vlSymsp->__Vm_topNames[1].c_str(),"", 'T',-9
+                                         , '#',64,VL_TIME_UNITED_Q(1000));
+                            VL_STOP_MT("memory_tb.sv", 150, "", false);
                         } else {
                             VL_WRITEF_NX("Test passed\n",0);
                         }
-                        VL_FINISH_MT("memory_tb.sv", 149, "");
+                        VL_FINISH_MT("memory_tb.sv", 153, "");
                         goto __Vlabel0;
                     }
                 }
@@ -339,10 +341,10 @@ VlCoroutine Vmemory_tb___024root___eval_initial__TOP__Vtiming__1(Vmemory_tb___02
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     while (VL_LIKELY(!vlSymsp->_vm_contextp__->gotFinish())) {
-        co_await vlSelfRef.__Vnontrivs.__VdlySched.delay(5ULL, 
+        co_await vlSelfRef.__Vnontrivs.__VdlySched.delay(0x0000000000001388ULL, 
                                                          nullptr, 
                                                          "memory_tb.sv", 
-                                                         30);
+                                                         31);
         vlSelfRef.memory_tb__DOT__clk = (1U & (~ (::IData)(vlSelfRef.memory_tb__DOT__clk)));
     }
     co_return;

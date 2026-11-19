@@ -14,7 +14,7 @@ module tb_mem;
     wire [7:0] rd_data;
     wire       ack;
 
-    // ── DUT instantiation ──────────────────────────────────────────
+    // ── DUT instantiation 
     mem_dut dut(
         .clk    (clk),
         .rst    (rst),
@@ -26,11 +26,11 @@ module tb_mem;
         .ack    (ack)
     );
 
-    // ── Clock ──────────────────────────────────────────────────────
+    // ── Clock 
     initial clk = 0;
     always  #5 clk = ~clk;
 
-    // ── State encoding ─────────────────────────────────────────────
+    // ── State encoding 
     // Simple integer constants — one per testbench phase
     parameter IDLE       = 0;
     parameter WRITE_REQ  = 1;
@@ -138,17 +138,7 @@ module tb_mem;
                             end
                          
                         end
-                        /*
-                        $display("[%0t] State: DONE — rd_data=0x%0h", $time, rd_data);
-
-                        // Verify read-back matches what was written
-                        if (rd_data !== 8'hA5)
-                            $error("MISMATCH: wrote 0xA5, read back 0x%0h", rd_data);
-                        else
-                            $display("PASS: read-back correct");
-
-                        $finish;
-                        */
+                    
                     end
                 end
                 

@@ -1,6 +1,7 @@
 //Challenge: Make the Memory Testbench Self-Checking (Final)
 //Self-checking testbench for the 8x8 synchronous memory with acknowledge handshake
 //mem_dut.sv will be the DUT
+`timescale 1ns/1ps
 module memory_tb;
 
     // ── DUT signals ────────────────────────────────────────────────
@@ -59,6 +60,9 @@ module memory_tb;
 
         $display("Seed=%0d",$get_initial_random_seed());
         pass_count=0; fail_count=0; 
+       
+        $dumpfile("memory_tb.vcd");//For Verilator Waveforms
+        $dumpvars(0,memory_tb);// 0 = all levels below memory_tb, including dut
 
         //CLear shadow memory
         begin: init_shadow
