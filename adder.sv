@@ -1,4 +1,4 @@
-//Selfchecking testbench Part 1
+//Selfchecking testbench 
 //Corresponding testbench will be  tb_adder_selfcheck
 // DUT: 4-bit adder
 // Inputs : a, b  (4-bit operands)
