@@ -8,3 +8,19 @@ This project contains set of systemverilog challenges related to one linear rand
 # Challenge 1
 
 This is a Linear random testbench for the 8x8 synchronous memory with acknowledge handshake.
+
+This testbench has modified it to use random addresses and data instead of the fixed values addr=4, wr_data=0xA5.The testbench has run 20 random write-then-read cycles. Each cycle selects a random 3-bit address (0–7) and a random 8-bit data value, writes them to the memory, reads them back from the same address, and verifies the read-back transactions. Here $urandom has utilized to generate both values and print the seed at the begining of the run.
+
+State machine of the testbench follows the below stages as a single  transaction. 
+IDLE-->WRITE_REQ-->WRITE_WAIT-->READ_REQ-->DONE
+
+# Simulation steps
+
+verilator --binary -j 0 --trace --timing -Wall -Wno-PROCASSINIT --top tb_mem mem_dut.sv tb_mem.sv
+
+./obj_dir/Vtb_mem
+
+# Simulation Results
+
+![alt text](image.png)
+
