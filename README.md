@@ -1,4 +1,4 @@
-# Testbench-designs-
+# Testbench-designs
 
 This project contains set of systemverilog challenges related to one linear random testbench architecture and three Selfchecking testbench. These testbenches are simulated by using open source IC design tools  such as Verilator and waveforms are generated via GTK Wave.
 
@@ -79,7 +79,7 @@ verilator --binary -j 0 --trace --timing -Wall -Wno-PROCASSINIT --top tb_pipe_se
 
 Verilator Simulation results are included in this file Part 2: Checking a Pipelined DUT Verilator.txt
 
-GTKWave results
+GTKWave results  Challenge 3 GTKA Waveform.png
 
 ![alt text](image-1.png)
 
@@ -88,3 +88,38 @@ GTKWave results
 # Selfchecking testbench 
 
 # Challenge 4
+
+Make the the 8×8 synchronous memory with the write/read FSM  testbench (challenge 1 testbench) Self-Checking.
+
+This selfchecking testbench implements following functions
+
+1.Runs 500 random write-read cycles with random addresses (0–7) and random 8-bit data.
+
+2.Automatically checks that each read-back matches the value written, using $error for each mismatch.
+
+3.Prints a final summary with pass/fail counts and calls $fatal if any failures occurred.
+
+4.Prints the seed at the start of the run
+
+
+In this last design memory_tb.sv will be the testbench and mem_dut.sv will be the dut file.
+Cycles are increased because it will hit all 8 locations. This testbench has designed such a way that instead of reading same address just wrote before this design will read  now sometimes hit addresses written many cycles ago (or never written), which should read 0x00 since both the DUT and the model reset to 0. Then this testbench can successfully catch stale-data bug.
+
+
+# Simulation steps
+
+verilator --binary -j 0 --trace --timing -Wall -Wno-PROCASSINIT --top memory_tb mem_dut.sv memory_tb.sv
+
+
+./obj_dir/Vmemory_tb
+
+# Simulaton Results
+
+GTK Wave results for waveforms
+
+![alt text](<GTK  waveform results for challenge 4.png>)
+
+
+Verilator simulations are included in the file listed below.
+
+Challenge 4 Reading random addresses for 500 cycles for selfchcekcing tb.txt

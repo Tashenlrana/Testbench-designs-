@@ -1,4 +1,4 @@
-//Challenge: Make the Memory Testbench Self-Checking (Final)
+//Challenge 4: Make the Memory Testbench Self-Checking (Final)
 //Self-checking testbench for the 8x8 synchronous memory with acknowledge handshake
 //mem_dut.sv will be the DUT
 `timescale 1ns/1ps
